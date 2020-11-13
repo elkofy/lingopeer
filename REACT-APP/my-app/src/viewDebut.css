@@ -1,0 +1,88 @@
+
+  header{
+    width: auto;
+    height: 120px;
+    display: block;
+    background-color: #1ee300;
+  }
+  .inner_header{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+  }
+  .logo_container h1{
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 200;
+  }
+  .logo_container h1 span{
+    font-weight: 800;
+  }
+  .logo_container img{
+    height: 80px;
+    width: 80px;
+    padding: 20px;
+  }
+
+  p{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+
+  @keyframes AutoSlide {
+	0%, 15%, 100% {
+		left: 0px; /*1ère image*/
+	}
+	35%, 50% {
+		left: -400px; /*2ème image*/
+	}
+	70%, 85% {
+		left: -800px; /*3ème image*/
+	}
+}
+
+#slideshow {
+	position: relative;
+	width: 626px;
+	height: 469px;
+	margin:  20px auto;
+	overflow: hidden;
+}
+#sContent li {
+	display: inline;
+}
+
+#sContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 1878px;
+    height: 1407px;
+	margin: 0;            
+	padding: 0;
+	
+	/*CSS3 keyframes animation*/
+	animation-name: AutoSlide;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+#connexion{
+   position: absolute; 
+   top :150px;
+   right: 10px;
+   display: inline-block;
+}
