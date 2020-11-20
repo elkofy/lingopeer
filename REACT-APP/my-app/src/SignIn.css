@@ -9,7 +9,8 @@
     width: 100%; 
 }
 .Title h2{
-  padding-top: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -19,12 +20,18 @@
   align-items: center;
 }
 .Connect fieldset {
-    text-align: center;
-    margin: 8px;
-    border: 1px solid silver;
-    padding: 8px;
-    border-radius: 4px;
-    width: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.ButtonCenter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;;
+  width: 50%;
+
 }
 
 .Connect legend {
@@ -55,5 +62,6 @@
 }
 .selects{
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
