@@ -1,5 +1,7 @@
 
-  header{
+  
+  
+  .App-header{
     width: auto;
     height: 120px;
     display: block;
@@ -32,6 +34,10 @@
     height: 80px;
     width: 80px;
     padding: 20px;
+  }
+
+  body{
+    background-color: beige;
   }
 
   p{
