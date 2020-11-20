@@ -1,14 +1,17 @@
-import logo from './logo.svg';
+
 
 import './App.css';
 import Header from './Header';
-import SignIn from './SignIn';
+import SignIN from './SignIn';
+import Accueil from './Accueil';
 
 function App() {
   return (
     <div>
-      <Header />
-      <SignIn />
+      <Header /> 
+      <SignIN />
+      <Accueil />
+      
     </div>
 
   );
