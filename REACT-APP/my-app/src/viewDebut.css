@@ -13,10 +13,10 @@
 		left: 0px; /*1ère image*/
 	}
 	35%, 50% {
-		left: -400px; /*2ème image*/
+		left: -626px; /*2ème image*/
 	}
 	70%, 85% {
-		left: -800px; /*3ème image*/
+		left: -1252px; /*3ème image*/
 	}
 }
 
@@ -44,7 +44,12 @@
 	animation-name: AutoSlide;
 	animation-duration: 10s;
 	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out; 
+}
+
+#sContent li img{
+	width: 626px;
+	height: 469px;
 }
 
 #connexion{
