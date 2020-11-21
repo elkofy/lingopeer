@@ -1,7 +1,5 @@
 
-
-  
-  p{
+  h3{
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
@@ -13,17 +11,17 @@
 		left: 0px; /*1ère image*/
 	}
 	35%, 50% {
-		left: -626px; /*2ème image*/
+		left: -557px; /*2ème image*/
 	}
 	70%, 85% {
-		left: -1252px; /*3ème image*/
+		left: -1114px; /*3ème image*/
 	}
 }
 
 #slideshow {
 	position: relative;
-	width: 626px;
-	height: 469px;
+	width: 557px;
+	height: 400px;
 	margin:  20px auto;
 	overflow: hidden;
 }
@@ -48,8 +46,8 @@
 }
 
 #sContent li img{
-	width: 626px;
-	height: 469px;
+	width: 557px;
+	height: 400px;
 }
 
 #connexion{
@@ -62,4 +60,11 @@
     position: absolute; 
    top :175px;
    right: 20px;
+}
+
+.seconnect{
+	border-radius: 25px;
+	background-color: white;
+	padding: 5px;
+	cursor: pointer;
 }

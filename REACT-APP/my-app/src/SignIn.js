@@ -9,7 +9,7 @@ const SignIn = () => {
       </div>
       <div class="Connect">
         <fieldset>
-            <legend>Se Connecter</legend>
+            <legend>Données Personnelles</legend>
             <div class="FirstInputs">
             <label for="Prenom">Prénom :</label>
             <input type="text" id="Prenom" name="Prenom"></input><br></br>
@@ -23,7 +23,7 @@ const SignIn = () => {
             <input type="text" id="mdpverif" name="mdpverif"></input><br></br>   
             </div>   
             <div class="selects">
-              <select class="Langue1" name="Langue1">
+              <select class="Langue" name="Langue1">
                 <option selected disabled>Langue 1</option>
                 <option value="1">français</option>
                 <option value="2">Anglais</option>
@@ -31,7 +31,7 @@ const SignIn = () => {
                 <option value="4">Espagnol</option>
                 <option value="5">Italien</option>
               </select>
-              <select class="Langue2" name="Langue2">
+              <select class="Langue" name="Langue2">
                 <option selected disabled>Langue 2</option>
                 <option value="1">français</option>
                 <option value="2">Anglais</option>

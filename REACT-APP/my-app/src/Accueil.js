@@ -8,7 +8,7 @@ import img3 from './images/imgl2.jpg';
 const Accueil = () => {
     return(
     <div>
-      <p>With lingo peer communicate better in an other language than your peers</p>
+            <h3>With lingo peer communicate better in an other language than your peers</h3>  
         <div id="slideshow">
             <ul id="sContent">
                 <li><img src={img1} alt="langues 1" /></li>
@@ -17,7 +17,7 @@ const Accueil = () => {
             </ul>
         </div>
         <div id="connexion">
-        <button class="seconect" type="button">
+        <button class="seconnect" type="button">
             Se connecter
         </button>
         </div>
