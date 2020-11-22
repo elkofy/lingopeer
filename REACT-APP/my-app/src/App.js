@@ -9,7 +9,6 @@ function App() {
   return (
     <div>
       <Header /> 
-      <SignIN />
       <Accueil />
       
     </div>
