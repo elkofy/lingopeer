@@ -2,15 +2,14 @@
 
 import './App.css';
 import Header from './Header';
-import SignIN from './SignIn';
-import Accueil from './Accueil';
+import Apresco from './apresConn';
+
 
 function App() {
   return (
     <div>
       <Header /> 
-      <SignIN />
-      <Accueil />
+      <Apresco />
       
     </div>
 

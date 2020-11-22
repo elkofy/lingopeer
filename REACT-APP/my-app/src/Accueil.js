@@ -8,7 +8,7 @@ import img3 from './images/imgl2.jpg';
 const Accueil = () => {
     return(
     <div>
-            <h3>With lingo peer communicate better in an other language than your peers</h3>  
+        <h3>With lingo peer communicate better in an other language than your peers</h3>  
         <div id="slideshow">
             <ul id="sContent">
                 <li><img src={img1} alt="langues 1" /></li>
@@ -20,9 +20,9 @@ const Accueil = () => {
         <button class="seconnect" type="button">
             Se connecter
         </button>
-        </div>
-        <div id="creercompte">
-                <a href="view.suivanteparencorecréer">Céer un compte</a>
+        <button class="creercompte" type="button">
+            Créer un compte
+        </button>
         </div>
     </div>
     );
