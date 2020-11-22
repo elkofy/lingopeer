@@ -21,7 +21,7 @@ const Accueil = () => {
             Se connecter
         </button>
         <button class="creercompte" type="button">
-            Céer un compte
+            Créer un compte
         </button>
         </div>
     </div>

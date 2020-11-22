@@ -1,0 +1,12 @@
+#globaldiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#globaldiv div{
+    border-radius: 25px;
+}
+
+h1{
+    font-weight: bold;
+}
