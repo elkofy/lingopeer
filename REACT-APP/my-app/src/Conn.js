@@ -15,7 +15,7 @@ const Conn = () => {
                 <label for="Email">Email :</label>
                 <input type="text" id="Email" name="Email"/><br/>
                 <label for="MDP">Mots De Passe :</label>
-                <input type="text" id="mdp" name="mdp"/><br/>
+                <input type="password" id="mdp" name="mdp"/><br/>
                 </div>
                 <button type="conn" name="conn"> Se Connecter</button>
                 </div>  
