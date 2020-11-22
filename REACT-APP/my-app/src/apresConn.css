@@ -1,12 +1,25 @@
-#globaldiv{
+.globaldiv{
     display: flex;
     flex-direction: row;
+    margin-top: 50px;
+    
 }
 
-#globaldiv div{
-    border-radius: 25px;
+.globaldiv div{
+    border:1px solid black;
+    border-radius: 15px;
+    width: 400px;
+    height: 400px;
+    margin-left: 40px;
 }
 
 h1{
     font-weight: bold;
+}
+
+button {
+    width: 300px;
+    height : 300px;
+    border-radius: 15px;
+    
 }
