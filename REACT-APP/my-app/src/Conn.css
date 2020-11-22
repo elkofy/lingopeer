@@ -6,7 +6,7 @@
   }
 
 .Title{
-    width: 100%; 
+    width: 100%;
 }
 .Title h2{
   padding-top: 30px;
@@ -20,18 +20,10 @@
   align-items: center;
 }
 .Connect fieldset {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.ButtonCenter{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;;
-  width: 50%;
-
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
 .Connect legend {
@@ -39,22 +31,20 @@
     font-weight: 800;
     padding: 2px;
 }
-
-.Connect label{
-  float: left;
-  clear: left;
-  width: auto;
-  text-align: right;
-  margin-bottom: 5px;
-}
-
 .Connect input{
   float: right;
   margin-left: 10px;
   border-radius: 5px;
   height: 20px;
+  width: 30%;
 }
-
+.Connect label{
+    float: left;
+    clear: left;
+    width: auto;
+    text-align: left;
+    margin-bottom: 5px;
+  }
 .Connect button{
   float: right;
   border-radius: 25px;
@@ -67,9 +57,8 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .Langue{
-  width: 40%;
-  height: 40px;
-  margin: 5px;
+    width: 40%;
+    height: 40px;
+    margin:5px;
 }
