@@ -2,14 +2,14 @@
 
 import './App.css';
 import Header from './Header';
-import Apresco from './apresConn';
+import ParamConv2A from './ParamConvA';
 
 
 function App() {
   return (
     <div>
       <Header /> 
-      <Apresco />
+      <ParamConv2A />
       
     </div>
 
