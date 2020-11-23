@@ -2,14 +2,14 @@
 
 import './App.css';
 import Header from './Header';
-import Profile from './Profile';
+import ParamConv2A from './ParamConvA';
 
 
 function App() {
   return (
     <div>
       <Header /> 
-      <Profile />
+      <ParamConv2A />
       
     </div>
 

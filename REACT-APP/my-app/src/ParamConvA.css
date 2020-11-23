@@ -5,6 +5,12 @@ h1{
     margin-right: 200px;
 }
 
+h2{
+    font-weight: bold;
+    text-align: center;
+   
+}
+
 .globalContainer{
     display: flex;
     flex-direction: row;
@@ -26,11 +32,11 @@ h1{
 	border-radius: 25px;
 	background-color: white;
 	padding: 5px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 p{
-    float: left;
+    float: left; 
 }
 
 select{
