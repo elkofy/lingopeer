@@ -42,7 +42,7 @@ const SignIn = () => {
                 <option value="5">Italien</option>
               </select>
             </div>
-                <button class="ButtonCenter"type="conn" name="conn">Se Connecter</button>
+                <button class="ButtonCenter" type="conn" name="conn">Se Connecter</button>
         </fieldset>
     </div>
     </div>

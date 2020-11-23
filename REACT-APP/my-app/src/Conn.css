@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    height: auto;
 }
 
 .Connect legend {
@@ -36,7 +37,7 @@
   margin-left: 10px;
   border-radius: 5px;
   height: 20px;
-  width: 30%;
+  width: auto;
 }
 .Connect label{
     float: left;
@@ -51,6 +52,8 @@
   background-color: white;
   padding: 5px;
   cursor: pointer;
+  height: auto;
+  width: auto;
 }
 .selects{
   text-align: center;
@@ -61,4 +64,9 @@
     width: 40%;
     height: 40px;
     margin:5px;
+}
+
+form{
+  height: auto;
+  text-align: center;
 }
