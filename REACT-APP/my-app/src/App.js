@@ -2,14 +2,14 @@
 
 import './App.css';
 import Header from './Header';
-import Apresco from './apresConn';
+import Profile from './Profile';
 
 
 function App() {
   return (
     <div>
       <Header /> 
-      <Apresco />
+      <Profile />
       
     </div>
 
