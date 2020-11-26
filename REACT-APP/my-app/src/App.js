@@ -2,16 +2,14 @@
 
 import './App.css';
 import Header from './Header';
-import SignIN from './SignIn';
-import Accueil from './Accueil';
-import SignIn from './SignIn';
+import ParamConv2A from './ParamConvA';
+
 
 function App() {
   return (
     <div>
       <Header /> 
-      <SignIn/>
-     
+      <ParamConv2A />
       
     </div>
 

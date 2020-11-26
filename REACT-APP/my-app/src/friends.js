@@ -21,10 +21,12 @@ const Friends = () =>{
             <div class="demande">
             <fieldset>
                 <legend>Ajouter un ami</legend>
-                <label for="Email">Email :</label>
-                <input type="text" id="Email" name="Email"/><br/>           
-                <textarea name="comment" form="usrform">Enter text here...</textarea>
-                <button type="conn" name="conn"> Envoyer la demande</button>
+                    <form>
+                        <label for="Email">Email : </label>
+                        <input type="text" id="Email" name="Email"/><br/>           
+                        <textarea name="comment" form="usrform">Entrer un message ici (optionnel)...</textarea>
+                        <button type="conn" name="conn"> Envoyer la demande</button>
+                    </form>
             </fieldset>
             </div>
         </div>

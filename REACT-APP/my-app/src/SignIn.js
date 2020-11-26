@@ -11,16 +11,18 @@ const SignIn = () => {
         <fieldset>
             <legend>Données Personnelles</legend>
             <div class="FirstInputs">
-            <label for="Prenom">Prénom :</label>
-            <input type="text" id="Prenom" name="Prenom"></input><br></br>
-            <label for="Nom">Nom :</label>
-            <input type="text" id="Nom" name="Nom"></input><br></br>
-            <label for="Email">Adresse Email :</label>
-            <input type="text" id="Email" name="Email"></input><br></br>
-            <label for="MDP">Mots De Passe :</label>
-            <input type="text" id="mdp" name="mdp"></input><br></br>
-            <label for="MDPverif">Verification Mots De Passe :</label>
-            <input type="text" id="mdpverif" name="mdpverif"></input><br></br>   
+            <form>
+              <label for="Prenom">Prénom :</label>
+              <input placeholder='Prenom'></input><br></br>
+              <label for="Nom">Nom :</label>
+              <input placeholder='nom'></input><br></br>
+              <label for="Email">Adresse Email :</label>
+              <input placeholder='Email'></input><br></br>
+              <label for="MDP">Mots De Passe :</label>
+              <input type="password" placeholder='Mot de passe'></input><br></br>
+              <label for="MDPverif">Verification Mots De Passe :</label>
+              <input type="password" placeholder='Verification mdp'></input><br></br>
+            </form>   
             </div>   
             <div class="selects">
               <select class="Langue" name="Langue1">
@@ -40,7 +42,7 @@ const SignIn = () => {
                 <option value="5">Italien</option>
               </select>
             </div>
-                <button class="ButtonCenter"type="conn" name="conn">Se Connecter</button>
+                <button class="ButtonCenter" type="conn" name="conn">Se Connecter</button>
         </fieldset>
     </div>
     </div>
