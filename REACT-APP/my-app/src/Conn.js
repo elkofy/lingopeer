@@ -14,9 +14,9 @@ const Conn = () => {
                         <div class="FirstInputs">
                         <div class="selects">
                         <label for="Email">Email :</label>
-                        <input type="text" id="Email" name="Email"/><br/>
+                        <input placeholder='Email' /><br />
                         <label for="MDP">Mots De Passe :</label>
-                        <input type="password" id="mdp" name="mdp"/><br/>
+                        <input type="password" placeholder='Mot de passe'/><br/>
                         </div>
                         <button type="conn" name="conn"> Se Connecter</button>
                         </div>
@@ -27,7 +27,7 @@ const Conn = () => {
                 <div class="SecondInputs">
                     <form>
                         <label for="Nom">Nom :</label>
-                        <input type="text" id="Nom" name="Nom"/><br/>
+                        <input placeholder='Nom'/><br/>
                     </form>
                     <form>
                     <div class="selects">

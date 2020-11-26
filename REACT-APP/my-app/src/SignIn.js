@@ -13,15 +13,15 @@ const SignIn = () => {
             <div class="FirstInputs">
             <form>
               <label for="Prenom">Prénom :</label>
-              <input type="text" id="Prenom" name="Prenom"></input><br></br>
+              <input placeholder='Prenom'></input><br></br>
               <label for="Nom">Nom :</label>
-              <input type="text" id="Nom" name="Nom"></input><br></br>
+              <input placeholder='nom'></input><br></br>
               <label for="Email">Adresse Email :</label>
-              <input type="text" id="Email" name="Email"></input><br></br>
+              <input placeholder='Email'></input><br></br>
               <label for="MDP">Mots De Passe :</label>
-              <input type="password" id="mdp" name="mdp"></input><br></br>
+              <input type="password" placeholder='Mot de passe'></input><br></br>
               <label for="MDPverif">Verification Mots De Passe :</label>
-              <input type="password" id="mdpverif" name="mdpverif"></input><br></br>
+              <input type="password" placeholder='Verification mdp'></input><br></br>
             </form>   
             </div>   
             <div class="selects">

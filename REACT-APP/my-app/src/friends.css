@@ -27,7 +27,6 @@
     margin: 20px;
   }
   .demande button{
-    float: right;
     border-radius: 25px;
     background-color: white;
     padding: 5px;
@@ -37,7 +36,6 @@
     height: auto;
   }
   .demande button:hover{
-    float: right;
     border-radius: 25px;
     background-color: #1ee300;
     padding: 5px;
@@ -58,6 +56,8 @@
   }
   .demande fieldset form input{
     margin: 10px;
+    border-radius: 5px;
+    height: 20px;
     width: auto;
   }
   fieldset legend{
