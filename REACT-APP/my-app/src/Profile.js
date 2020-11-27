@@ -2,7 +2,7 @@ import React from 'react';
 import './Profile.css';
 import PPDefault from './images/ProfilDefault.png';
 
-renvoi
+
 
 const Profile = () => {
     return(
