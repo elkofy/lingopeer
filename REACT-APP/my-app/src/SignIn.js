@@ -1,7 +1,24 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './SignIn.css';
+import Axios from 'axios';
 
 const SignIn = () => {
+  const [registerUsername,setRegisterUsername]=useState("");
+const [registerPassword,setRegisterPassword]=useState("");
+
+const register = ()=>{Axios({
+
+  method: "POST",
+data: {
+  username:registerUsername,
+  password: registerPassword,
+},withCredentials:true,
+url:"http://localhost:4000/register",
+}).then((res)=> console.log(res));
+
+};
+
+
     return(
     <div>
       <div class="Title">
@@ -13,13 +30,13 @@ const SignIn = () => {
             <div class="FirstInputs">
             <form>
               <label for="Prenom">Prénom :</label>
-              <input placeholder='Prenom'></input><br></br>
+              <input placeholder='Prenom' onChange={e => setRegisterUsername(e.target.value)}></input><br></br>
               <label for="Nom">Nom :</label>
               <input placeholder='nom'></input><br></br>
               <label for="Email">Adresse Email :</label>
-              <input placeholder='Email'></input><br></br>
+              <input placeholder='Email' ></input><br></br>
               <label for="MDP">Mots De Passe :</label>
-              <input type="password" placeholder='Mot de passe'></input><br></br>
+              <input type="password" placeholder='Mot de passe' onChange={e => setRegisterPassword(e.target.value)}></input><br></br>
               <label for="MDPverif">Verification Mots De Passe :</label>
               <input type="password" placeholder='Verification mdp'></input><br></br>
             </form>   
@@ -42,7 +59,7 @@ const SignIn = () => {
                 <option value="5">Italien</option>
               </select>
             </div>
-                <button class="ButtonCenter" type="conn" name="conn">Se Connecter</button>
+                <button class="ButtonCenter"  type="conn" name="conn" onClick={register}>Se Connecter</button>
         </fieldset>
     </div>
     </div>
