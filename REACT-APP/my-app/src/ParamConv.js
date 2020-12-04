@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
+
 
 import './ParamConv.css';
 
 
 const ParamConv1 = () => {
-    const [name, setName] = useState('');
-    const [room, setRoom] = useState('');
+    
 
     return(
         <div>
@@ -39,11 +38,11 @@ const ParamConv1 = () => {
                         </select>
                     </div>
                 </div>
-                <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room${room}`}>
+                
                 <button class="lancerConv" type="submit">
                     Lancer la conversation
                 </button>
-                </Link>
+                
             </div>
     );
 }
