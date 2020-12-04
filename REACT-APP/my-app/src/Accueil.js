@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './viewDebut.css';
 
 import img1 from './images/imgl1.png';
@@ -17,12 +18,14 @@ const Accueil = () => {
             </ul>
         </div>
         <div id="connexion">
+        <Link to="./signIn">
         <button class="seconnect" type="button">
             Se connecter
-        </button>
-        <button class="creercompte" type="button">
-            Créer un compte
-        </button>
+        </button>   
+        </Link>
+            <button class="creercompte" type="button">
+                Créer un compte
+            </button>
         </div>
     </div>
     );
