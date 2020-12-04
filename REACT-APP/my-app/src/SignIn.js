@@ -60,7 +60,7 @@ url:"http://localhost:4000/register",
                 <option value="5">Italien</option>
               </select>
             </div>
-            <Link to="/">
+            <Link to="/apresConn">
                 <button class="ButtonCenter"  type="conn" name="conn" onClick={register}>Se Connecter</button>
             </Link>
         </fieldset>

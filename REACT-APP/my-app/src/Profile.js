@@ -3,7 +3,6 @@ import './Profile.css';
 import PPDefault from './images/ProfilDefault.png';
 
 
-
 const Profile = () => {
     return(
         <div>
