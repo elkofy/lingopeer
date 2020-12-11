@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
     <Router>
-        <Header /> 
+        <Header />
         <Switch>
           <Route path="/" exact component={Accueil}/>
           <Route path="/apresConn" component={ApresConn}/>
