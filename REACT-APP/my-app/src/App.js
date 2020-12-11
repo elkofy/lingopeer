@@ -7,6 +7,7 @@ import SignIn from './SignIn';
 import Connect from './Conn';
 import Profile from './Profile';
 import ApresConn from './apresConn';
+import Room from './Room';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -21,7 +22,8 @@ function App() {
           <Route path="/apresConn" component={ApresConn}/>
           <Route path="/signIn" component={SignIn}/>
           <Route path="/Conn" component={Connect}/>
-          <Route path="/Profile" component={Profile}/>
+          <Route path="/Profile" component={Profile}/>*
+          <Route path="/Room" component={Room}/>
         </Switch>
     </Router>
 
