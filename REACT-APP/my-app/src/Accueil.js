@@ -24,12 +24,12 @@ const Accueil = () => {
             </ul>
         </div>
         <div id="connexion">
-        <Link to="./signIn">
+        <Link to="./Conn">
         <button class="seconnect" type="button">
             Se connecter
         </button>   
         </Link>
-        <Link to="./Conn">
+        <Link to="./SignIn">
 
             <button class="creercompte" type="button">
                 Créer un compte

@@ -10,7 +10,7 @@
     border:1px solid black;
     border-radius: 15px;
     width: 400px;
-    height: 400px;
+    height: 500px;
     margin-left: 40px;
     background-color: cornsilk;
     
@@ -28,7 +28,7 @@ p{
 }
 
 .globaldiv button {
-    width: 400px;
+    width: 350px;
     height : 300px;
     border-radius: 15px;
     cursor: pointer;  

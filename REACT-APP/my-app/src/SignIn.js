@@ -51,6 +51,15 @@ url:"http://localhost:4000/register",
                 <option value="4">Espagnol</option>
                 <option value="5">Italien</option>
               </select>
+             
+              <select class="Niveau" name="Niveau1">
+                <option selected disabled>Niveau 1</option>
+                <option value="1">Débutant</option>
+                <option value="2">Intermédiaire</option>
+                <option value="3">Expert</option>
+                
+              </select>
+              
               <select class="Langue" name="Langue2">
                 <option selected disabled>Langue 2</option>
                 <option value="1">français</option>
@@ -58,6 +67,14 @@ url:"http://localhost:4000/register",
                 <option value="3">Allemand</option>
                 <option value="4">Espagnol</option>
                 <option value="5">Italien</option>
+              </select>
+
+              <select class="Niveau" name="Niveau2">
+                <option selected disabled>Niveau 2</option>
+                <option value="1">Débutant</option>
+                <option value="2">Intermédiaire</option>
+                <option value="3">Expert</option>
+                
               </select>
             </div>
             <Link to="/apresConn">

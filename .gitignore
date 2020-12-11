@@ -214,7 +214,6 @@ modules.xml
 
 # User-specific stuff
 node_modules/
-REACT-APP/my-app/node_modules/
 REACT-APP/backend/node_modules/
 
 
