@@ -7,6 +7,7 @@ password:String,
 });
 USERMODEL=mongoose.model("User",user);
 module.exports=mongoose.model("User",user);
+
 var query =USERMODEL.find(null);
 query.where('username', 'nassim');
 query.limit(1);
