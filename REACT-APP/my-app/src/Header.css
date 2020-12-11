@@ -7,9 +7,9 @@
   }
   .header{
     width: auto;
-    height: 120px;
+    height: 100px;
     display: block;
-    background-color: #1ee300;
+    background-color: #7FD1B9;
   }
   .inner_header{
     width:auto;
@@ -35,14 +35,14 @@
     font-weight: 800;
   }
   .logo_container img{
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     padding: 20px;
   }
   button {
     float: right;
     border-radius: 25px;
-    background-color: #1ee300;
+    background-color: #7FD1B9;
     padding: 5px;
     cursor: pointer;
     height: auto;
