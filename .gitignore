@@ -213,6 +213,10 @@ modules.xml
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+node_modules/
+REACT-APP/my-app/node_modules/
+REACT-APP/backend/node_modules/
+
 
 # Generated files
 

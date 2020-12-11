@@ -6,21 +6,37 @@
 }
 
 .globaldiv div{
+    
     border:1px solid black;
     border-radius: 15px;
     width: 400px;
     height: 400px;
     margin-left: 40px;
+    background-color: cornsilk;
     
 }
 
 h1{
     font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+}
+
+p{
+    margin-top: 5px;
+    text-align: center;
 }
 
 .globaldiv button {
     width: 400px;
     height : 300px;
     border-radius: 15px;
+<<<<<<< HEAD
     cursor: pointer;  
+=======
+    cursor: pointer;
+    
+    
+   
+>>>>>>> 8c283d52331f04cb25cd2424cf54e33c2645b61d
 }

@@ -1,11 +1,14 @@
 import './App.css';
 import Header from './Header';
+
+
 import Accueil from './Accueil';
 import SignIn from './SignIn';
 import Connect from './Conn';
 import Profile from './Profile';
 import ApresConn from './apresConn';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 
 function App() {
@@ -21,6 +24,7 @@ function App() {
           <Route path="/Profile" component={Profile}/>
         </Switch>
     </Router>
+
       
     </div>
 
