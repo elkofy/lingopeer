@@ -6,23 +6,16 @@ import { Link } from 'react-router-dom';
 
 import './viewDebut.css';
 
-import img1 from './images/imgl1.png';
-import img2 from './images/imgl.jpg';
-import img3 from './images/imgl2.jpg';
+
 
 
 
 const Accueil = () => {
     return(
     <div>
-        <h3>Bienvenue sur LingoPeer</h3>  
-        <div id="slideshow">
-            <ul id="sContent">
-                <li><img src={img1} alt="langues 1" /></li>
-                <li><img src={img2} alt="blleu 2" /></li>
-                <li><img src={img3} alt="gros blo 3" /></li> 
-            </ul>
-        </div>
+        
+        <h1>Bienvenue sur LingoPeer</h1>         
+        
         <div id="connexion">
         <Link to="./Conn">
         <button class="seconnect" type="button">
@@ -36,6 +29,8 @@ const Accueil = () => {
             </button>
         </Link>
         </div>
+
+        
     </div>
     );
 }
