@@ -22,6 +22,9 @@ const Header = () => {
                   <Link to="/Profile">
                   <li>CréeCompte</li>
                   </Link>
+                  <Link to="/Room">
+                  <li>Room 1</li>
+                  </Link>
                 </ul>
             </nav>
             <button>Contact Us</button>
