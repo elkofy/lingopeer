@@ -3,10 +3,15 @@ const user = new mongoose.Schema(
 {
 username:String,
 password:String,
+langue1:String,
+lvl1:String,
+
 
 });
-USERMODEL=mongoose.model("User",user);
+
 module.exports=mongoose.model("User",user);
+USERMODEL=mongoose.model("User",user);
+
 
 var query =USERMODEL.find(null);
 query.where('username', 'nassim');
