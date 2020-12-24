@@ -53,7 +53,9 @@ app.post("/register",(req,res) => {
                 username: req.body.username,
                 password:hashedPassword,
                 langue1:req.body.langue1,
-                lvl1:req.body.lvl1
+                lvl1:req.body.lvl1,
+                langue2:req.body.langue2,
+                lvl2:req.body.lvl2,
 
             });
             await newUser.save();

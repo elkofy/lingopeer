@@ -5,7 +5,8 @@ username:String,
 password:String,
 langue1:String,
 lvl1:String,
-
+langue2:String,
+lvl2:String,
 
 });
 

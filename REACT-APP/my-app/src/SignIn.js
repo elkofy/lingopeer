@@ -14,12 +14,12 @@ const register = ()=>{Axios({
 
   method: "POST",
 data: {
-  username:registerUsername,
+  username: registerUsername,
   password: registerPassword,
   langue1: registerL1,
   lvl1: registerLVL1,
-  langue2:registerL2,
-  lvl1:registerLVL2,
+  langue2: registerL2,
+  lvl2: registerLVL2,
 },withCredentials:true,
 url:"http://localhost:4000/register",
 }).then((res)=> console.log(res));
