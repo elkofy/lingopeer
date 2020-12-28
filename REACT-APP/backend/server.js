@@ -12,7 +12,7 @@ const User = require('./user');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);   
 const { v4: uuidV4 } = require('uuid');    
-
+//-----END OF MIDDLEWARE----
 
 mongoose.connect(
     "mongodb+srv://root:L7PjPnz4ZHt5S8uj@database.wdiqg.mongodb.net/<dbname>?retryWrites=true&w=majority",
@@ -31,17 +31,35 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cors({
 
-    origin:"http://localhost:3000",
+    origin:"http://localhost:3000",//l'application react a laquelle on se connecte
     credentials:true
 }))
 
 
-app.use(cookieParser("secretcode"))
+app.use(cookieParser("secretcode"));
+app.use(passport.initialize());
+app.use(passport.session());
+require('./passportConfig')(passport);
+//---endofmiddleware-----
+
+
+
+
 
 //Routes
-app.post("/login",(req,res) => {
-    console.log(req.body);
-});
+app.post("/login", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) throw err;
+      if (!user) res.send("No User Exists");
+      else {
+        req.logIn(user, (err) => {
+          if (err) throw err;
+          res.send("Successfully Authenticated");
+          console.log(req.user);
+        });
+      }
+    })(req, res, next);
+  });
 
 app.post("/register",(req,res) => {
     User.findOne({username: req.body.username},async (err,doc)=>{

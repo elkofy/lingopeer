@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from "react";
+import Axios from 'axios';
 import './Conn.css';
 
+
+
 const Conn = () => {
+    const [loginUsername,setloginUsername]=useState("");
+    const [loginPassword,setloginPassword]=useState("");
+    const login = ()=>{
+        Axios({
+    
+          method: "POST",
+        data: {
+          username:loginUsername,
+          password: loginPassword,
+        },withCredentials:true,
+        url:"http://localhost:4000/login",
+      }).then((res)=> console.log(res));
+    };
     return(
+       
     <div>
+        
         <div class="Title">
             <h2>Connecte toi à LingoPeer!</h2>
         </div>
@@ -14,11 +32,11 @@ const Conn = () => {
                         <div class="FirstInputs">
                         <div class="selects">
                         <label for="Email">Email :</label>
-                        <input placeholder='Email' /><br />
+                        <input placeholder='Email'    onChange={e => setloginUsername(e.target.value)} /><br />
                         <label for="MDP">Mots De Passe :</label>
-                        <input type="password" placeholder='Mot de passe'/><br/>
+                        <input type="password" placeholder='Mot de passe'  onChange={e => setloginPassword(e.target.value)}  /><br/>
                         </div>
-                        <button type="conn" name="conn"> Se Connecter</button>
+                        <button type="conn" name="conn" onClick={login} > Se Connecter</button>
                         </div>
                     </form>
             </fieldset>
@@ -56,6 +74,6 @@ const Conn = () => {
       </div>
 
     );
+    
 }
-
 export default Conn;
