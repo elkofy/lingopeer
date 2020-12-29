@@ -1,78 +1,83 @@
 
-  h3{
-	margin-top: 30px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: underline;
+.principal{
+	display: flex;
+	justify-content: space-evenly;
+	margin: 20px;
+	
+ }
+
+ .gauche{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	width: 70%;
+	height: 450px;
+	background-color: rgb(6, 6, 58);
+	border-radius: 6px;
+	border: 5px solid #7FD1B9;
+ }
+
+ .App-logo{
+	margin-top: 20px;
+	animation: App-logo-spin infinite 10s linear;
+	height: 400px;
+ }
+
+ @keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
   }
 
+ .droite {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px;
+	justify-content: center;
+ }
 
-  @keyframes AutoSlide {
-	0%, 15%, 100% {
-		left: 0px; /*1ère image*/
-	}
-	35%, 50% {
-		left: -557px; /*2ème image*/
-	}
-	70%, 85% {
-		left: -1114px; /*3ème image*/
-	}
-}
+ .blabla h1{
+	font-size: 45px;
+ }
 
-#slideshow {
-	position: relative;
-	width: 557px;
-	height: 400px;
-	margin:  20px auto;
-	overflow: hidden;
-}
-#sContent li {
-	display: inline;
-}
+ .blabla p{
+	 font-size: 20px;
+ }
 
-#sContent {
-	position: absolute;
-	top: 0;
-	left: 0;
-    width: 1878px;
-    height: 1407px;
-	margin: 0;            
-	padding: 0;
-	
-	/*CSS3 keyframes animation*/
-	animation-name: AutoSlide;
-	animation-duration: 10s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out; 
-}
+ .connexion{
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-evenly;
 
-#sContent li img{
-	width: 557px;
-	height: 400px;
-}
+ }
 
-#connexion{
-   position: absolute; 
-   top :150px;
-   right: 20px;
-   display: flex;
-   flex-direction: column;
-}
-
-.creercompte{
-	width: 180px;
-	border-radius: 25px;
+ .seconnect {
+	width: 150px;
+	height: 55px;
+	font-size: 20px;
 	background-color: white;
-	padding: 5px;
-	cursor: pointer;
-	margin-top: 5px;
-   
-}
+	color: black;
+	border-radius: 12px;
+	border: 2px solid #0906df;
+	transition-duration: 0.4s;
+ }
 
-.seconnect{
-	width: 180px;
-	border-radius: 25px;
+ .seconnect:hover {
+	background-color: #0906df; 
+	color: white;
+  }
+
+  .creercompte {
+	width: 150px;
+	height: 55px;
+	font-size: 20px;
 	background-color: white;
-	padding: 5px;
-	cursor: pointer;
-}
+	color: black;
+	border-radius: 12px;
+	border: 2px solid #0906df;
+	transition-duration: 0.4s;
+ }
+
+ .creercompte:hover {
+	background-color: #0906df; 
+	color: white;
+  }
