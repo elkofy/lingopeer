@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-li, a, button{
+.Header li,.Header a,.Header button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -29,19 +29,20 @@ li, a, button{
   .Header h1 span{
     font-weight: 800;
   }
-  ul{
+  .Header ul{
+      margin: 0px;
       list-style: none;
   }
-  ul li{
+  .Header ul li{
       display: inline-block;
       padding: 0px 20px;
   }
 
-  ul li:hover{
+  .Header ul li:hover{
     cursor: pointer;
   }
 
-  button{
+  .Header button{
       padding: 9px;
       background-color:#edf0f1;
       border: none;
@@ -50,8 +51,14 @@ li, a, button{
       color:#7FD1B9;
       transition: all 0.3s ease 0s;
   }
-  button:hover{
+  .Header button:hover{
     background-color: #87E990;
     color: white;
+  }
+
+  @media only screen and (max-width: 717px){
+    .Header{
+      height: 80px;
+    }
   }
   

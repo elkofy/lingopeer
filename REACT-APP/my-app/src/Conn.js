@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import './Conn.css';
 
@@ -36,7 +37,9 @@ const Conn = () => {
                         <label for="MDP">Mots De Passe :</label>
                         <input type="password" placeholder='Mot de passe'  onChange={e => setloginPassword(e.target.value)}  /><br/>
                         </div>
+                        <Link to="/apresConn">
                         <button type="conn" name="conn" onClick={login} > Se Connecter</button>
+                        </Link>
                         </div>
                     </form>
             </fieldset>
@@ -66,7 +69,9 @@ const Conn = () => {
                             <option value="5">Italien</option>
                         </select>
                         </div>
+                        <Link to="/apresConn">
                             <button type="conn" name="conn"> Se Connecter</button>
+                        </Link>
                         </form>
                         </div>
             </fieldset>

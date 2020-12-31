@@ -60,35 +60,35 @@
     height: 20px;
     width: auto;
   }
-  fieldset legend{
-      font-weight: 800;
-  }
-  fieldset textarea{
-      margin-bottom: 20px;
-      height: 70px;
-      width: 100%;
-  }
-  ul{
-    list-style-type: none;
-  }
-  ul li{
-      border: 1px solid #ddd;
-      margin-top: -1px;
-      background-color: #f6f6f6;
-  }
-  ul li:hover{
+  .demande fieldset legend{
+    font-weight: 800;
+}
+.demande fieldset textarea{
+    margin-bottom: 20px;
+    height: 70px;
+    width: 100%;
+}
+.list ul{
+  list-style-type: none;
+}
+.list li{
     border: 1px solid #ddd;
     margin-top: -1px;
-    background-color: #1ee300;
+    background-color: #f6f6f6;
 }
-ul li a {
-    display: block;
-    font-weight: 500;
-    color: black;
-    padding: 12px;
+.list li:hover{
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #1ee300;
 }
-ul li a:hover {
-    background: transparent url('#') no-repeat 3px 170px;
-    color: white;
-    padding: 12px;
+.list a {
+  display: block;
+  font-weight: 500;
+  color: black;
+  padding: 12px;
+}
+.list a:hover {
+  background: transparent url('#') no-repeat 3px 170px;
+  color: white;
+  padding: 12px;
 }
