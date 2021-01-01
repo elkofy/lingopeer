@@ -1,14 +1,14 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add axios
+  C:\Program Files\nodejs\node.exe C:\Users\louis\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add socket.io-client
 
 PATH: 
-  C:\Python39\Scripts\;C:\Python39\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\PuTTY\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Users\nassi\.windows-build-tools\python27\;C:\Users\nassi\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\nassi\AppData\Local\Programs\Python\Python38-32\;C:\Users\nassi\AppData\Local\Microsoft\WindowsApps;C:\Users\nassi\AppData\Local\atom\bin;C:\Users\nassi\AppData\Roaming\npm;C:\Users\nassi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nassi\AppData\Local\Yarn\bin
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\louis\AppData\Local\Microsoft\WindowsApps;;C:\Users\louis\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\louis\AppData\Roaming\npm
 
 Yarn version: 
-  1.22.5
+  1.22.10
 
 Node version: 
-  14.15.0
+  14.15.1
 
 Platform: 
   win32 x64
@@ -29,9 +29,12 @@ npm manifest:
       "@testing-library/jest-dom": "^5.11.5",
       "@testing-library/react": "^11.1.1",
       "@testing-library/user-event": "^12.2.0",
+      "axios": "^0.21.0",
+      "babel-eslint": "^10.1.0",
       "bcryptjs": "^2.4.3",
       "body-parser": "^1.19.0",
       "concurrently": "^5.3.0",
+      "ejs": "^3.1.5",
       "express": "^4.17.1",
       "is-empty": "^1.2.0",
       "jsonwebtoken": "^8.5.1",
@@ -43,6 +46,7 @@ npm manifest:
       "react-dom": "^17.0.1",
       "react-router-dom": "^5.2.0",
       "react-scripts": "4.0.0",
+      "simple-peer": "^9.9.3",
       "validator": "^13.1.17",
       "web-vitals": "^0.2.4"
     },
