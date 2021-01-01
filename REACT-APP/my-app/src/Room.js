@@ -16,4 +16,4 @@ const Room = () => {
     );
 }
 
-export default Room;
+export default App;

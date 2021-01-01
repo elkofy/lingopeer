@@ -94,24 +94,25 @@ app.use(session({
 }));
 
 // Video
-app.get('/', (req, res) => {
-    res.redirect(`/${uuidV4()}`)
-})
-
-app.get('/:room', (req, res) => {
-    res.render('room', { roomId: req.params.room })
-})
 
 io.on('connection', socket => {
-    socket.on('join-room', (roomId, userId) => {
-        socket.join(roomId)
-        socket.to(roomId).broadcast.emit('user-connected', userId)
-
-        socket.on('disconnect', () => {
-        socket.to(roomId).broadcast.emit('user-disconnected', userId)
-        })
+    if (!users[socket.id]) {
+        users[socket.id] = socket.id;
+    }
+    socket.emit("yourID", socket.id);
+    io.sockets.emit("allUsers", users);
+    socket.on('disconnect', () => {
+        delete users[socket.id];
     })
-})
+
+    socket.on("callUser", (data) => {
+        io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
+    })
+
+    socket.on("acceptCall", (data) => {
+        io.to(data.to).emit('callAccepted', data.signal);
+    })
+});
 
 //Start server
 
