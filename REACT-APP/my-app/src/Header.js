@@ -5,9 +5,9 @@ import './Header.css';
 
 
 const Header = () => {
-    const navStyle = {
+    /*const navStyle = {
         color: 'white'
-    }
+    }*/
   return(
       <div class="Header">
             <h1>Lingo<span>Peer</span></h1>
