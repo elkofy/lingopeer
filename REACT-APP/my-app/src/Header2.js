@@ -4,15 +4,14 @@ import './Header.css';
 
 
 
-
-const Header = () => {
+const Header2 = () => {
     
   return(
       <div class="Header">
             <h1>Lingo<span>Peer</span></h1>
             <nav>
                 <ul>
-                  <Link to="/">
+                  <Link to="/apresConn">
                   <li>Home</li>
                   </Link>
                   <Link to="/Conn">
@@ -21,12 +20,13 @@ const Header = () => {
                   <Link to="/Conn">
                   <li>Contact Us</li>
                   </Link>
-                  
                 </ul>
             </nav>
-            <button class="btn" id="darkTrigger">Mode sombre</button>
+            <Link to="/Profile">
+            <button id="utilisateurBTN">Mettre son blaze ici</button>
+            </Link>
       </div>
 
     );
 }
-export default Header;
+export default Header2;
