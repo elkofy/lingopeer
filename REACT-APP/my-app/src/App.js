@@ -25,7 +25,7 @@ function App() {
           <Route path="/apresConn" component={ApresConn}/>
           <Route path="/signIn" component={SignIn}/>
           <Route path="/Conn" component={Connect}/>
-          <Route path="/Profile" component={Profile}/>*
+          <Route path="/Profile" component={Profile}/>
           <Route path="/Friends" component={Friends}/>
           <Route path="/Room" component={Room}/>
           <Route path="/ParamConv" component={ParamConv1}/>

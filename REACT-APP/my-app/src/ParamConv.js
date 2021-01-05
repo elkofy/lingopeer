@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 import './ParamConv.css';
@@ -9,7 +10,7 @@ const ParamConv1 = () => {
 
     return(
         <div>
-            <div class='Title'>
+            <div class='HautTitle'>
                 <h1>Parametrage de la conversation</h1>
             </div>
                 <div class='globalContainer'>
@@ -38,11 +39,11 @@ const ParamConv1 = () => {
                         </select>
                     </div>
                 </div>
-                
+                <Link to="./Room">
                 <button class="lancerConv" type="submit">
                     Lancer la conversation
                 </button>
-                
+                </Link>
             </div>
     );
 }
