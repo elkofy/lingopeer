@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\louis\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add socket.io-client
+  C:\Program Files\nodejs\node.exe C:\Users\louis\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add simple-peer
 
 PATH: 
   C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\louis\AppData\Local\Microsoft\WindowsApps;;C:\Users\louis\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\louis\AppData\Roaming\npm
@@ -47,6 +47,8 @@ npm manifest:
       "react-router-dom": "^5.2.0",
       "react-scripts": "4.0.0",
       "simple-peer": "^9.9.3",
+      "socket.io-client": "^3.0.4",
+      "styled-components": "^5.2.1",
       "validator": "^13.1.17",
       "web-vitals": "^0.2.4"
     },
