@@ -22,7 +22,7 @@ const Video = styled.video`
   height: 50%;
 `;
 
-function App() {
+function Room() {
   const [yourID, setYourID] = useState("");
   const [users, setUsers] = useState({});
   const [stream, setStream] = useState();
@@ -161,4 +161,4 @@ function App() {
   );
 }
 
-export default App;
+export default Room;
