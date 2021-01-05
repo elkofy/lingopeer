@@ -8,10 +8,7 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
-const User = require('./user');
-const server = require('http').Server(app);
-const io = require('socket.io')(server);   
-const { v4: uuidV4 } = require('uuid');    
+const User = require('./user');   
 //-----END OF MIDDLEWARE----
 
 mongoose.connect(
@@ -92,27 +89,6 @@ app.use(session({
     saveUninitialized:true
 
 }));
-
-// Video
-
-io.on('connection', socket => {
-    if (!users[socket.id]) {
-        users[socket.id] = socket.id;
-    }
-    socket.emit("yourID", socket.id);
-    io.sockets.emit("allUsers", users);
-    socket.on('disconnect', () => {
-        delete users[socket.id];
-    })
-
-    socket.on("callUser", (data) => {
-        io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
-    })
-
-    socket.on("acceptCall", (data) => {
-        io.to(data.to).emit('callAccepted', data.signal);
-    })
-});
 
 //Start server
 
