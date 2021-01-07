@@ -11,7 +11,7 @@ import './viewDebut.css';
 
 const Accueil = () => {
     return(
-    <div>
+    <div class="maxS">
         
     <div class="principal">
 
