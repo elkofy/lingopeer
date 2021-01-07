@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 import './SignIn.css';
 import Axios from 'axios';
 
+
 const SignIn = () => {
+  
+
   const [registerUsername,setRegisterUsername]=useState("");
 const [registerPassword,setRegisterPassword]=useState("");
 const [registerL1,setregisterL1]=useState("");
 const [registerLVL1,setregisterLVL1]=useState("");
 const [registerL2,setregisterL2]=useState("");
 const [registerLVL2,setregisterLVL2]=useState("");
+const [data, setData] = useState(null);
+
 const register = ()=>{Axios({
 
   method: "POST",
@@ -26,6 +31,23 @@ url:"http://localhost:4000/register",
 
 };
 
+const getUser = () => {
+ 
+  Axios({
+    method: "GET",
+    withCredentials: true,
+    url: "http://localhost:4000/user",
+  }).then((res) => {
+    setData(res.data);
+    console.log(res.data);
+  });
+};
+
+const click =() => {
+  getUser();
+  register();
+
+}
 
     return(
     <div>
@@ -36,7 +58,7 @@ url:"http://localhost:4000/register",
         <fieldset>
             <legend>Données Personnelles</legend>
             <div class="FirstInputs">
-            <form>
+            <form >
               <label for="Prenom">Prénom :</label>
               <input placeholder='Prenom' onChange={e => setRegisterUsername(e.target.value)}></input><br></br>
               <label for="Nom">Nom :</label>
@@ -85,8 +107,10 @@ url:"http://localhost:4000/register",
               </select>
             </div>
             <Link to="/apresConn">
-                <button class="ButtonCenter"  type="conn" name="conn" onClick={register}>Se Connecter</button>
+                <button class="ButtonCenter"  type="conn" name="conn" onClick={click}>Se Connecter</button>
             </Link>
+            <div>
+      </div>
         </fieldset>
     </div>
     </div>

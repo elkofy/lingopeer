@@ -1,9 +1,11 @@
 import './App.css';
 import Header from './Header';
+import Header2 from './Header2';
 
 
-import Accueil from './Accueil';
+import Accueil from './components/Accueil';
 import SignIn from './SignIn';
+import Chatrooms from './Chatrooms';
 import Connect from './Conn';
 import Profile from './Profile';
 import ApresConn from './apresConn';
@@ -30,6 +32,7 @@ function App() {
           <Route path="/Room" component={Room}/>
           <Route path="/ParamConv" component={ParamConv1}/>
           <Route path="/ParamConvA" component={ParamConv2A}/>
+          <Route path="/Chatrooms" component={Chatrooms}/>
         </Switch>
     </Router>
 

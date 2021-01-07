@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 
-
 const Header2 = () => {
-    
+ 
+
   return(
       <div class="Header">
             <h1>Lingo<span>Peer</span></h1>
@@ -23,8 +23,9 @@ const Header2 = () => {
                 </ul>
             </nav>
             <Link to="/Profile">
-            <button id="utilisateurBTN">Mettre son blaze ici</button>
+            <button id="utilisateurBTN" ></button>
             </Link>
+          
       </div>
 
     );

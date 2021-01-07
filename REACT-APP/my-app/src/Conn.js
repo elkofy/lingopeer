@@ -4,21 +4,40 @@ import Axios from 'axios';
 import './Conn.css';
 
 
-
 const Conn = () => {
     const [loginUsername,setloginUsername]=useState("");
     const [loginPassword,setloginPassword]=useState("");
-    const login = ()=>{
+    const [data, setData] = useState(null);
+
+    const login = () => {
         Axios({
-    
           method: "POST",
-        data: {
-          username:loginUsername,
-          password: loginPassword,
-        },withCredentials:true,
-        url:"http://localhost:4000/login",
-      }).then((res)=> console.log(res));
-    };
+          data: {
+            username: loginUsername,
+            password: loginPassword,
+          },
+          withCredentials: true,
+          url: "http://localhost:4000/login",
+        }).then((res) => console.log(res));
+      };
+
+    const getUser = () => {
+        Axios({
+          method: "GET",
+          withCredentials: true,
+          url: "http://localhost:4000/user",
+        }).then((res) => {
+          setData(res.data);
+          console.log(res.data);
+        });
+      };
+      
+      const click =() => {
+        login();
+        getUser();
+        
+      
+      }
     return(
        
     <div>
@@ -35,10 +54,12 @@ const Conn = () => {
                         <label for="Email">Email :</label>
                         <input placeholder='Email'    onChange={e => setloginUsername(e.target.value)} /><br />
                         <label for="MDP">Mots De Passe :</label>
+                        {data ? <label>Welcome Back {data.username}</label> : null}
+
                         <input type="password" placeholder='Mot de passe'  onChange={e => setloginPassword(e.target.value)}  /><br/>
                         </div>
                         <Link to="/apresConn">
-                        <button type="conn" name="conn" onClick={login} > Se Connecter</button>
+                        <button type="conn" name="conn" onClick={click} > Se Connecter</button>
                         </Link>
                         </div>
                     </form>
@@ -70,7 +91,7 @@ const Conn = () => {
                         </select>
                         </div>
                         <Link to="/apresConn">
-                            <button type="conn" name="conn"> Se Connecter</button>
+                            <button type="conn" onclick={getUser} name="conn"> Se Connecter</button>
                         </Link>
                         </form>
                         </div>

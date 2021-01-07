@@ -1,17 +1,19 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-import earth from './images/planet-earth-svgrepo-com.svg';
+import earth from './../images/planet-earth-svgrepo-com.svg';
 
 import { Link } from 'react-router-dom';
 
-import './viewDebut.css';
+import './../viewDebut.css';
 
+export default class Acceuil extends Component {
+state = {
+    title:'Accueil'
+}
 
+ render() {
 
-
-const Accueil = () => {
-    return(
-    <div>
+return ( <div>
         
     <div class="principal">
 
@@ -47,9 +49,14 @@ const Accueil = () => {
     </div> 
 
         
-    </div>
-    );
+    </div>)
+
+ }
+
+
 }
 
-export default Accueil;
+
+
+
 
