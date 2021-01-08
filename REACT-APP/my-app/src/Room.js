@@ -38,12 +38,30 @@ function Room() {
   useEffect(() => {
     socket.current = io.connect("/");
     if (navigator.mediaDevices !== undefined) {
+      console.log(navigator.mediaDevices);
       navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
         setStream(stream);
         if (userVideo.current) {
           userVideo.current.srcObject = stream;
         }
       })
+    } else {
+      console.log(navigator.mediaCapabilities);
+      console.log(navigator.mediaDevices);
+      navigator.mediaCapabilities.decodingInfo({
+        type : 'file',
+        audio : {
+            contentType : "audio/mp3",
+            channels : 2,
+            bitrate : 132700,
+            samplerate : 5200
+        }
+    }).then(function(result) {
+      console.log('This configuration is ' +
+            (result.supported ? '' : 'not ') + 'supported, ' +
+            (result.smooth ? '' : 'not ') + 'smooth, and ' +
+            (result.powerEfficient ? '' : 'not ') + 'power efficient.')
+    });
     }
 
     socket.current.on("yourID", (id) => {
