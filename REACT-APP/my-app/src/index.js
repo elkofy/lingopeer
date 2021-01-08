@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import Axios from 'axios';
 
+
+Axios.defaults.baseURL ='http://localhost:4000/';
 ReactDOM.render(
   <React.StrictMode>
     <App />

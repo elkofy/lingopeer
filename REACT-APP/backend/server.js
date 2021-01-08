@@ -11,6 +11,8 @@ const app = express();
 const User = require('./user');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);   
+const jwt = require("jsonwebtoken");
+
 const { v4: uuidV4 } = require('uuid');    
 const  datauser= 'null';
 //-----END OF IMPORTS----
@@ -55,69 +57,91 @@ require("./passportConfig")(passport);
 
 
 //Routes
-app.post("/login", (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
-      if (err) throw err;
-      if (!user) res.send("No User Exists");
-      else {
-        req.logIn(user, (err) => {
-          if (err) throw err;
-          res.send("Successfully Authenticated");
-          console.log(req.user);
-        });
-      }
-    })(req, res, next);
-  });
+app.post("/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
 
-app.post("/register" , (req, res) => {
-    User.findOne({username: req.body.username}, async (err,doc) => {
-        if (err) throw err;
-        if (doc) res.send("User Already Exists");
-        if (!doc) {
-            const hashedPassword = await bcrypt.hash(req.body.password,10);
+    // validate
+    if (!username || !password)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
 
-            const newUser = new User({
-                username: req.body.username,
-                password:hashedPassword,
-                langue1:req.body.langue1,
-                lvl1:req.body.lvl1,
-                langue2:req.body.langue2,
-                lvl2:req.body.lvl2,
+    const user = await User.findOne({ username: username });
+    if (!user)
+      return res
+        .status(400)
+        .json({ msg: "No account with this username has been registered." });
 
-            });
-            await newUser.save();
-            res.send("User Created");
-        }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
+
+    const token = jwt.sign({ id: user._id }, 'secret');
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+      },
     });
-});
-
-app.get("/user", (req, res) => {
-    res.send(req.user);
-    console.log(req.user);
-
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
   });
 
+app.post("/register" , async (req, res) => {
+  try {
+    let { email, password, passwordCheck, username , langue1, lvl1 ,langue2 , lvl2} = req.body;
 
-// Video
+    // validate
 
-io.on('connection', socket => {
-    if (!users[socket.id]) {
-        users[socket.id] = socket.id;
-    }
-    socket.emit("yourID", socket.id);
-    io.sockets.emit("allUsers", users);
-    socket.on('disconnect', () => {
-        delete users[socket.id];
-    })
+    if (!email || !password || !passwordCheck)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
+    if (password.length < 5)
+      return res
+        .status(400)
+        .json({ msg: "The password needs to be at least 5 characters long." });
+    if (password !== passwordCheck)
+      return res
+        .status(400)
+        .json({ msg: "Enter the same password twice for verification." });
 
-    socket.on("callUser", (data) => {
-        io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
-    })
+    const existingUser = await User.findOne({ email: email });
+    if (existingUser)
+      return res
+        .status(400)
+        .json({ msg: "An account with this email already exists." });
 
-    socket.on("acceptCall", (data) => {
-        io.to(data.to).emit('callAccepted', data.signal);
-    })
+    if (!username) username = email;
+
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(password, salt);
+
+    const newUser = new User({
+      username,
+      password: passwordHash,
+      email,
+      langue1,
+      lvl1,
+      langue2,
+      lvl2,
+
+      
+      
+    });
+    const savedUser = await newUser.save();
+    res.json(savedUser);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
+
+app.get("/user", async(req, res) => {
+  const user = await User.findById(req.user);
+  res.json({
+    username: user.username,
+    id: user._id,
+  });
+  });
+
 
 //Start server
 

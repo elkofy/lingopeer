@@ -37,12 +37,14 @@ function Room() {
 
   useEffect(() => {
     socket.current = io.connect("/");
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
-      setStream(stream);
-      if (userVideo.current) {
-        userVideo.current.srcObject = stream;
-      }
-    })
+    if (navigator.mediaDevices !== undefined) {
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
+        setStream(stream);
+        if (userVideo.current) {
+          userVideo.current.srcObject = stream;
+        }
+      })
+    }
 
     socket.current.on("yourID", (id) => {
       setYourID(id);

@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Header';
 import Header2 from './Header2';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 import Accueil from './components/Accueil';
@@ -18,10 +19,11 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 function App() {
+
   return (
     <div>
     <Router>
-        <Header />
+        <Header2 />
         <Switch>
           <Route path="/" exact component={Accueil}/>
           <Route path="/apresConn" component={ApresConn}/>

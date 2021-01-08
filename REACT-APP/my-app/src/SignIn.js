@@ -1,120 +1,140 @@
-import React,{ useState } from 'react';
+import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import './SignIn.css';
 import Axios from 'axios';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import app from './firebase'
+export default class Signin extends Component {
 
+state = {
+  title:Signin
+}
 
-const SignIn = () => {
+handleSubmit= e => {
+
+e.preventDefault();
+
+const data ={
+  username:this.nom,
+  email :this.email,
+  password:this.motdepasse,
+  passwordCheck:this.conf,
+  langue1:this.Langue1,
+  lvl1:this.Niveau1,
+  langue2:this.Langue2,
+  lvl2:this.Niveau2,
+
+};
+Axios.post('register',data,{withCredentials: true}).then(
+
+res => {
+  console.log(res);
+}
+).catch(
+
+  err=> {
+    console.log(err);
+  }
+)
+console.log(data);
+
+}
+
+render() {
   
 
-  const [registerUsername,setRegisterUsername]=useState("");
-const [registerPassword,setRegisterPassword]=useState("");
-const [registerL1,setregisterL1]=useState("");
-const [registerLVL1,setregisterLVL1]=useState("");
-const [registerL2,setregisterL2]=useState("");
-const [registerLVL2,setregisterLVL2]=useState("");
-const [data, setData] = useState(null);
+  return    (<div>
+    <div class="Title">
+      <h2>Rejoins LingoPeer!</h2>
+    </div>
 
-const register = ()=>{Axios({
+    <div class="Connect">
 
-  method: "POST",
-data: {
-  username: registerUsername,
-  password: registerPassword,
-  langue1: registerL1,
-  lvl1: registerLVL1,
-  langue2: registerL2,
-  lvl2: registerLVL2,
-},withCredentials:true,
-url:"http://localhost:4000/register",
-}).then((res)=> console.log(res));
+      <fieldset>
+      <div class="card ">
+      <div class="card-header">
+              <legend>Données Personnelles</legend>
+              </div>
+              <div class="FirstInputs">
+                <form  class="form" onSubmit={this.handleSubmit} type="color"  >
+                  <div className ="form-group">
+                    <label for="Prenom">Prénom :</label>
+                  <input   type="text" placeholder="Prenom"  className ="form-control"  onChange={e => this.prenom =e.target.value}></input><br></br> 
+                  </div>
+                  <div className ="form-group">
+                    <label for="Nom">Nom :</label>
+                  <input   type="text" placeholder="Nom"  className ="form-control"onChange={e => this.nom =e.target.value}></input><br></br> 
+                  </div>
+                  <div className ="form-group">
+                    <label for="E-mail">Email :</label>
+                  <input   type="email" placeholder="batou@gmail.com"  className ="form-control" onChange={e => this.email =e.target.value} ></input><br></br> 
+                  </div>
 
-};
+                  <div className ="form-group">
+                    <label for="Motdepasse">Mot de passe :</label>
+                  <input   type="password" placeholder="Mot de passe"  className ="form-control" onChange={e => this.motdepasse =e.target.value}></input><br></br> 
+                  </div>
 
-const getUser = () => {
- 
-  Axios({
-    method: "GET",
-    withCredentials: true,
-    url: "http://localhost:4000/user",
-  }).then((res) => {
-    setData(res.data);
-    console.log(res.data);
-  });
-};
-
-const click =() => {
-  getUser();
-  register();
-
-}
-
-    return(
-    <div>
-      <div class="Title">
-        <h2>Rejoins LingoPeer!</h2>
-      </div>
-      <div class="Connect">
-        <fieldset>
-            <legend>Données Personnelles</legend>
-            <div class="FirstInputs">
-            <form >
-              <label for="Prenom">Prénom :</label>
-              <input placeholder='Prenom' onChange={e => setRegisterUsername(e.target.value)}></input><br></br>
-              <label for="Nom">Nom :</label>
-              <input placeholder='nom'></input><br></br>
-              <label for="Email">Adresse Email :</label>
-              <input placeholder='Email' ></input><br></br>
-              <label for="MDP">Mots De Passe :</label>
-              <input type="password" placeholder='Mot de passe' onChange={e => setRegisterPassword(e.target.value)}></input><br></br>
-              <label for="MDPverif">Verification Mots De Passe :</label>
-              <input type="password" placeholder='Verification mdp'></input><br></br>
-            </form>   
-            </div>   
-            <div class="selects">
-              <select class="Langue" name="Langue1" onChange={e => setregisterL1(e.target.value)} >
-                <option selected disabled>Langue 1</option>
-                <option value="Français">Français</option>
-                <option value="Anglais">Anglais</option>
-                <option value="Allemand">Allemand</option>
-                <option value="Espagnol">Espagnol</option>
-                <option value="Italien">Italien</option>
-              </select>
-             
-              <select class="Niveau" name="Niveau1" onChange={e => setregisterLVL1(e.target.value)} >
-                <option selected disabled>Niveau 1</option>
-                <option value="Débutant">Débutant</option>
-                <option value="Intermédiaire">Intermédiaire</option>
-                <option value="Expert">Expert</option>
+                  <div className ="form-group">
+                    <label for="Motdepasse">Confirmation :</label>
+                  <input   type="Confirmation" placeholder="Confirmation"  className ="form-control" onChange={e => this.conf =e.target.value} ></input><br></br> 
+                  </div>
+                  
                 
-              </select>
               
-              <select class="Langue" name="Langue2" onChange={e => setregisterL2(e.target.value)}>
-                <option selected disabled>Langue 2</option>
-                <option value="Français">Français</option>
-                <option value="Anglais">Anglais</option>
-                <option value="Allemand">Allemand</option>
-                <option value="Espagnol">Espagnol</option>
-                <option value="Italien">Italien</option>
-              </select>
-
-              <select class="Niveau" name="Niveau2" onChange={e => setregisterLVL2(e.target.value)} >
-                <option selected disabled>Niveau 2</option>
-                <option value="Débutant">Débutant</option>
-                <option value="Intermédiaire">Intermédiaire</option>
-                <option value="Expert">Expert</option>
                 
-              </select>
-            </div>
-            <Link to="/apresConn">
-                <button class="ButtonCenter"  type="conn" name="conn" onClick={click}>Se Connecter</button>
-            </Link>
-            <div>
-      </div>
-        </fieldset>
-    </div>
-    </div>
-    );
-}
+                <div className ="form-group" >
+                  <select class="Langue" name="Langue1" onChange={e => this.Langue1 =e.target.value} >
+                    <option selected disabled>Langue 1</option>
+                    <option value="Français">Français</option>
+                    <option value="Anglais">Anglais</option>
+                    <option value="Allemand">Allemand</option>
+                    <option value="Espagnol">Espagnol</option>
+                    <option value="Italien">Italien</option>
+                  </select>
+                
+                  <select class="Niveau" name="Niveau1" onChange={e => this.Niveau1 =e.target.value} >
+                    <option selected disabled>Niveau 1</option>
+                    <option value="Débutant">Débutant</option>
+                    <option value="Intermédiaire">Intermédiaire</option>
+                    <option value="Expert">Expert</option>
+                    
+                  </select>
+                  
+                  <select class="Langue" name="Langue2" onChange={e => this.Langue2 =e.target.value} >
+                    <option selected disabled>Langue 2</option>
+                    <option value="Français">Français</option>
+                    <option value="Anglais">Anglais</option>
+                    <option value="Allemand">Allemand</option>
+                    <option value="Espagnol">Espagnol</option>
+                    <option value="Italien">Italien</option>
+                  </select>
 
-export default SignIn;
+                  <select class="Niveau" name="Niveau2" onChange={e => this.Niveau2 =e.target.value} >
+                    <option selected disabled>Niveau 2</option>
+                    <option value="Débutant">Débutant</option>
+                    <option value="Intermédiaire">Intermédiaire</option>
+                    <option value="Expert">Expert</option>
+                    
+                  </select>
+                  
+
+              </div>
+              
+
+                    
+
+            
+                  <button className="btn "  type="conn" name="conn" /*onClick={click}*/>Se Connecter</button>
+         
+              </form> 
+              </div> 
+              </div>
+
+              
+      </fieldset>
+  </div>
+  </div>)
+  
+}
+}
