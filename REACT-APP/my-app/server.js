@@ -2,8 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
-const http = require("http");
-const server = http.createServer(app);
+const https = require("https");
+const fs = require('fs');
+const server = https.createServer({
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.cert')
+}, app);
 const socket = require("socket.io");
 const io = socket(server);
 
@@ -18,7 +22,7 @@ server.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 //
-
+ 
 // Video
 const users = {};
 
