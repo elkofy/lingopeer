@@ -38,7 +38,6 @@ function Room() {
   useEffect(() => {
     socket.current = io.connect("/");
     if (navigator.mediaDevices !== undefined) {
-      console.log(navigator.mediaDevices);
       navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
         setStream(stream);
         if (userVideo.current) {

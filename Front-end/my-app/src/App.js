@@ -142,6 +142,7 @@ export default  class App extends Component  {
             <Route path="/ParamConv" component={ParamConv1}/>
           <Route path="/ParamConvA" component={ParamConv2A}/>
           <Route path="/Chatrooms" component={Chatrooms}/>
+          <Route path="/Room" component={Room}/>
           </Switch>
         </div>
       </div>
