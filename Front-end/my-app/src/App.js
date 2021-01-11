@@ -4,9 +4,10 @@ import Header2 from './Header2';
 import React, { Component } from "react";
 
 
-import Accueil from './Accueil';
+
 import SignIn from './SignIn';
 import Chatrooms from './Chatrooms';
+
 import Connect from './Conn';
 //import Profile from './Profile';
 import ApresConn from './apresConn';
@@ -27,6 +28,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import Aboutus from "./components/Aboutus.component";
 
 
 export default  class App extends Component  {
@@ -72,6 +74,11 @@ export default  class App extends Component  {
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Acceuil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/aboutus"} className="nav-link">
+                About us
               </Link>
             </li>
 
@@ -130,12 +137,13 @@ export default  class App extends Component  {
           )}
         </nav>
 
-        <div className="container mt-4">
+        <div className="contain">
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/aboutus" component={Aboutus}/>
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
