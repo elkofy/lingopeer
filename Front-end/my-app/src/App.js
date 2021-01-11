@@ -10,7 +10,7 @@ import Chatrooms from './Chatrooms';
 
 import Connect from './Conn';
 //import Profile from './Profile';
-import ApresConn from './apresConn';
+
 import Room from './Room';
 import Friends from './friends';
 import ParamConv1 from './ParamConv';
@@ -101,7 +101,7 @@ export default  class App extends Component  {
             {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Conversation
                 </Link>
               </li>
             )}

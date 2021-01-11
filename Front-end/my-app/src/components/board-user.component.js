@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import UserService from "../services/user.service";
+import './apresConn.css';
 
 export default class BoardUser extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class BoardUser extends Component {
   render() {
     if (this.state.content=="User Content."){
     return (
-      <div className="container">
+      <div>
            <div class="globaldiv">
             
             <div id="b1">
@@ -63,7 +64,7 @@ export default class BoardUser extends Component {
     );
   }
   return (
-    <div className="container">
+    <div>
       <header className="jumbotron">
         <h3>You need to log in in order to do that !</h3>
       </header>
