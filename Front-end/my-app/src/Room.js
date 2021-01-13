@@ -3,6 +3,7 @@ import './Room.css';
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
+import Chat from "./Chat/Chat";
 
 const Container = styled.div`
   height: 100vh;
@@ -68,6 +69,7 @@ function Room() {
     })
     socket.current.on("allUsers", (users) => {
       setUsers(users);
+      console.log(users);
     })
 
     socket.current.on("hey", (data) => {
@@ -163,6 +165,7 @@ function Room() {
         {UserVideo}
         {PartnerVideo}
       </Row>
+      <Chat/>
       <Row>
         {Object.keys(users).map(key => {
           if (key === yourID) {

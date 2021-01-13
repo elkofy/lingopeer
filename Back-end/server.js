@@ -1,11 +1,26 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const http = require('http');
+const socketio = require('socket.io');
+
+const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+
 
 const app = express();
+const server = http.createServer(app);
+//const io = socketio(server);
+const io = require("socket.io")(server, {
+  cors:{
+    origin: "http://localhost:8081",
+    methods: ["GET","POST"],
+    allowedHeaders: ["*"],
+    credential: true
+  }
+});
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8081",
 };
 
 app.use(cors(corsOptions));
@@ -44,7 +59,7 @@ require("./app/routes/user.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
@@ -83,3 +98,40 @@ function initial() {
     }
   });
 }
+
+io.on('connect', (socket) => {
+  //listener de connection
+  socket.on('join', ({ name, room }, callback) => {
+    //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
+    const { error, user } = addUser({ id: socket.id, name, room });
+
+    if(error) return callback(error);
+
+    socket.join(user.room); //l'utilisateur user rejoins la room room
+
+    socket.emit('message', { user: '', text: `${user.name}, welcome to the ${user.room} room!`});    //message envoyé à l'utilisateur lors de sa connexion
+    socket.broadcast.to(user.room).emit('message', { user: '', text: `${user.name} has joined!` });  //message envoyé à tous les utilisateurs sauf celui qui rejoins
+
+    io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
+
+    callback();
+  });
+
+  socket.on('sendMessage', (message, callback) => {
+    //listener de l'envoi de message
+    const user = getUser(socket.id); //recupère l'utilisateur qui envoie le message
+
+    io.to(user.room).emit('message', { user: user.name, text: message }); //envoi le message de l'utilisateur user 
+    callback();
+  });
+
+  socket.on('disconnect', () => {
+    //listener de déconnexion
+    const user = removeUser(socket.id); //l'utilisateur user est supprimé de la salle
+
+    if(user) {
+      io.to(user.room).emit('message', { user: '', text: `${user.name} has left.` }); //message envoyé dans la salle lors de la déconnexion
+      io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)}); //met à jour les utilisateurs dans la salle
+    }
+  })
+});

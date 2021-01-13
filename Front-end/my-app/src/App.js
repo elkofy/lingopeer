@@ -30,6 +30,8 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Aboutus from "./components/Aboutus.component";
 
+import Chat from "./Chat/Chat";
+
 
 export default  class App extends Component  {
 
@@ -151,6 +153,7 @@ export default  class App extends Component  {
           <Route path="/ParamConvA" component={ParamConv2A}/>
           <Route path="/Chatrooms" component={Chatrooms}/>
           <Route path="/Room" component={Room}/>
+          <Route path="/Chat" component={Chat}/>
           </Switch>
         </div>
       </div>
