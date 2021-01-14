@@ -7,6 +7,8 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
 
+const getUsersInRoom = require('../../Back-end/users');
+
 //
 server.use(express.static(path.join(__dirname, 'build')));
 
@@ -20,7 +22,7 @@ server.get('/', function (req, res) {
 //
  
 // Video
-const users = {};
+const users = getUsersInRoom;
 
 io.on('connection', socket => {
     if (!users[socket.id]) {
