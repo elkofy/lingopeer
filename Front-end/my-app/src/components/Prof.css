@@ -1,0 +1,13 @@
+.fullPage{
+    height: 84vh;
+    background-image: url(../images/paysageProfile.jpg);
+    background-size: 100%;
+    padding-top: 20px;
+}
+.container{
+    height: auto;
+}
+.jumbotron{
+    background-color: rgba(127, 209, 185, 0.3);
+    margin-top: 20px;
+}

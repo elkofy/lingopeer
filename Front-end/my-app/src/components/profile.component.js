@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthService from "../services/auth.service";
+import './Prof.css';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class Profile extends Component {
     const { currentUser } = this.state;
 
     return (
+      <div className="fullPage">
       <div className="container">
         <header className="jumbotron">
           <h3>
@@ -38,11 +40,12 @@ export default class Profile extends Component {
         </p>
         
         
-        <strong>Authorities:</strong>
+        <strong>Rôle:</strong>
         <ul>
           {currentUser.roles &&
             currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
         </ul>
+      </div>
       </div>
     );
   }
