@@ -2,12 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
-const https = require("https");
-const fs = require('fs');
-const server = https.createServer({
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert')
-}, app);
+const http = require("http");
+const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
 
