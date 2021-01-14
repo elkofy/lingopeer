@@ -9,7 +9,7 @@
       "test": "echo \"Error: no test specified\" && exit 1",
       "start2": "node server.js",
       "start": "PROD=true node server.js",
-      "postinstall": "cd ../Front-end/my-app && yarn"
+      "postinstall": "cd Front-end/my-app && yarn"
     }
   }
   
