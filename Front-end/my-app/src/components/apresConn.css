@@ -1,8 +1,7 @@
 .globaldiv{
     display: flex;
     flex-direction: row;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    border : 3vh solid white;
     justify-content: space-evenly;
 }
 

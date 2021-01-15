@@ -6,6 +6,7 @@
 }
 .fullPage .container{
     height: auto;
+    width: 40%;
 }
 .jumbotron{
     background-color: rgba(127, 209, 185, 0.3);

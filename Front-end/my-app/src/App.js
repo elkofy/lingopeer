@@ -37,7 +37,12 @@ export default  class App extends Component  {
       showModeratorBoard: false,
       showAdminBoard: false,
       currentUser: undefined,
+      addClass: false
     };
+  }
+
+  darkm(){
+    this.setState({addClass:!this.state.addClass});
   }
 
   componentDidMount() {
@@ -58,6 +63,11 @@ export default  class App extends Component  {
 
   render() {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
+    
+    let boxClass = ["contain"];
+    if(this.state.addClass){
+      boxClass.push('dark');
+    }
 
     return (
       <div>
@@ -110,6 +120,11 @@ export default  class App extends Component  {
                   LogOut
                 </a>
               </li>
+              <li className="nav-item">
+                <button className="butonSom" onClick={this.darkm.bind(this)}>
+                  Mode sombre
+                </button>
+              </li>
             </div>
           ) : (
             <div className="navbar-nav ml-auto">
@@ -128,7 +143,7 @@ export default  class App extends Component  {
           )}
         </nav>
 
-        <div className="contain">
+        <div className={boxClass.join(' ')}>
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/login" component={Login} />

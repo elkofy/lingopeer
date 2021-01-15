@@ -1,44 +1,6 @@
-h1{
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-right: 200px;
-}
-
-h2{
-    font-weight: bold;
-    text-align: center;
-   
-}
-
-.globalContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.globalContainer div{
-    border: 1px solid black;
-    padding: 20px; 
-    margin-top: 10px;
-    margin-bottom: 40px;  
-}
-
-
-
-.lancerConv{
-    margin-left: 50px;
-    width: 180px;
-	border-radius: 25px;
-	background-color: white;
-	padding: 5px;
-    cursor: pointer;
-}
-
-p{
-    float: left; 
-}
-
-select{
-    float: right;
+.containcard2{
+    border-bottom: 5vh solid white;
+    border-top:0vh solid white;
+    border-left:5vh solid white ;
+    border-right:5vh solid white ;
 }

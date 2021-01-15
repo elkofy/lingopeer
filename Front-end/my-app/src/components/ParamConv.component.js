@@ -40,6 +40,7 @@ export default class  ParamConv1 extends React.Component {
     render (){
         if (this.state.content=="User Content."){
     return(
+      <div className="containcard">
         <div className="card card-container">
         <h5>Parametrage de la conversation: </h5>
             <div className="form-group">
@@ -76,6 +77,7 @@ export default class  ParamConv1 extends React.Component {
                 <span>Lancer la conversation</span>
                 </button>
             </Link> 
+        </div>
         </div>
     );
 }
