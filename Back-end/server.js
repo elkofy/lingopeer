@@ -1,3 +1,4 @@
+require('dotenv').config;
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -57,6 +58,12 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
+if (process.env.PROD) {
+  app.use(express.static(path.join(__dirname, '../Front-end/my-app/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Front-end/my-app/build/index.html'));
+  })
+}
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {

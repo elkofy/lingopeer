@@ -64,21 +64,6 @@ function Room() {
     const peer = new Peer({
       initiator: true,
       trickle: false,
-      config: {
-
-        iceServers: [
-            {
-                urls: "stun:numb.viagenie.ca",
-                username: "sultan1640@gmail.com",
-                credential: "98376683"
-            },
-            {
-                urls: "turn:numb.viagenie.ca",
-                username: "sultan1640@gmail.com",
-                credential: "98376683"
-            }
-        ]
-    },
       stream: stream,
     });
 
@@ -120,12 +105,15 @@ function Room() {
   let UserVideo;
   if (stream) {
     UserVideo = (
-      <Video playsInline muted ref={userVideo} autoPlay />
+      <Video playsInline muted hidden ref={userVideo} autoPlay />
     );
   }
 
   let PartnerVideo;
   if (callAccepted) {
+    UserVideo = (
+      <Video playsInline muted ref={userVideo} autoPlay />
+    );
     PartnerVideo = (
       <Video playsInline ref={partnerVideo} autoPlay />
     );
@@ -142,6 +130,7 @@ function Room() {
   }
   return (
     <Container>
+    <h1>Conversation</h1>
       <Row>
         {UserVideo}
         {PartnerVideo}

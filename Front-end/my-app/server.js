@@ -2,14 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
-const https = require("https");
-const fs = require('fs');
-const server = https.createServer({
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert')
-}, app);
+const http = require("http");
+const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
+
+const getUsersInRoom = require('../../Back-end/users');
 
 //
 server.use(express.static(path.join(__dirname, 'build')));
@@ -24,7 +22,7 @@ server.get('/', function (req, res) {
 //
  
 // Video
-const users = {};
+const users = getUsersInRoom;
 
 io.on('connection', socket => {
     if (!users[socket.id]) {
