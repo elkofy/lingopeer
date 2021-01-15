@@ -1,14 +1,20 @@
 import './App.css';
+import Header from './Header';
+import Header2 from './Header2';
 import React, { Component } from "react";
 
-import Chatrooms from './components/chatroom.component';
 
+
+import SignIn from './SignIn';
+import Chatrooms from './Chatrooms';
+
+import Connect from './Conn';
 //import Profile from './Profile';
 
-import Room from './components/Room.component';
-//import Friends from './friends';
-import ParamConv1 from './components/ParamConv.component';
-import ParamConv2A from './components/ParamConvA.component';
+import Room from './Room';
+import Friends from './friends';
+import ParamConv1 from './ParamConv';
+import ParamConv2A from './ParamConvA';
 //import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route, Link } from "react-router-dom";
@@ -24,7 +30,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Aboutus from "./components/Aboutus.component";
 
-import Chat from "./components/Chat/Chat";
+import Chat from "./Chat/Chat";
 
 
 export default  class App extends Component  {
@@ -156,6 +162,7 @@ export default  class App extends Component  {
   /*return (
     <div>
     <Router>
+        <Header2 />
         <Switch>
           <Route path="/" exact component={Accueil}/>
           <Route path="/apresConn" component={ApresConn}/>
