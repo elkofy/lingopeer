@@ -66,7 +66,7 @@ export default class BoardUser extends Component {
   return (
     <div>
       <header className="jumbotron">
-        <h3>You need to log in in order to do that !</h3>
+        <h3>Connectez-vous pour acceder à ce contenu !</h3>
       </header>
       
     </div>
