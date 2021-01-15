@@ -68,11 +68,6 @@ export default  class App extends Component  {
           </Link>
           <div className="navbar-nav mr">
             <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Acceuil
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link to={"/aboutus"} className="nav-link">
                 About us
               </Link>

@@ -4,6 +4,8 @@ import Louis from '../images/photo_Louis.jfif';
 import Bapt from '../images/photo_Bapt.jpg';
 import Alec from '../images/photo_Alec.jpg';
 import Nass from '../images/photo_Nass.png';
+import Driss from '../images/photo_driss.jpg';
+import Saad from '../images/photo_saad.png';
 
 import './Aboutus.css';
 
@@ -42,12 +44,12 @@ export default class Aboutus extends Component{
                     <p>Nassim - Chef de projet</p>
                 </div>
                 <div class="Driss">
-                    <img src={Bapt} className="Bapt" alt="photoBapt" />
-                    <p>Baptiste - Développer front-end</p>
+                    <img src={Driss} className="Driss" alt="photoDriss" />
+                    <p>Driss - Développer back-end</p>
                 </div>
                 <div class="Saad">
-                    <img src={Bapt} className="Bapt" alt="photoBapt" />
-                    <p>Baptiste - Développer front-end</p>
+                    <img src={Saad} className="Saad" alt="photoSaad" />
+                    <p>Saad - Développer back-end</p>
                 </div>
             </div>
 
