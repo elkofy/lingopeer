@@ -1,7 +1,7 @@
 {
-  "name": "node-js-jwt-auth-mongodb",
+  "name": "back-end",
   "version": "1.0.0",
-  "description": "Node.js + MongoDB: JWT Authentication & Authorization",
+  "description": "backend deploy",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +18,7 @@
     "authentication",
     "mongodb"
   ],
-  "author": "bezkoder",
+  "author": "lingo team",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
