@@ -9,7 +9,7 @@ import authService from '../../services/auth.service';
 
 import './Chat.css';
 
-const ENDPOINT = 'localhost:8080';
+const ENDPOINT = 'https://lingopeerbe.herokuapp.com/';
 
 let socket;
 
