@@ -13,7 +13,7 @@ const server = http.createServer(app);
 //const io = socketio(server);
 const io = require("socket.io")(server, {
   cors:{
-    origin: "http://localhost:8081",
+    origin: "https://lingo-peer.netlify.app",
     methods: ["GET","POST"],
     allowedHeaders: ["*"],
     credential: true
@@ -21,7 +21,7 @@ const io = require("socket.io")(server, {
 });
 
 var corsOptions = {
-  origin: "http://localhost:8081",
+  origin: "https://lingo-peer.netlify.app",
 };
 
 app.use(cors(corsOptions));
@@ -58,12 +58,7 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
-if (process.env.PROD) {
-  app.use(express.static(path.join(__dirname, '../Front-end/my-app/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Front-end/my-app/build/index.html'));
-  })
-}
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
