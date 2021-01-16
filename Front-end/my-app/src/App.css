@@ -1,0 +1,96 @@
+label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .card-container.card {
+    max-width: 350px !important;
+    padding: 40px 40px;
+  }
+  .navbar-custom {
+    height: 100px;
+    font-size: 1.1em !important;
+    background-color: #7FD1B9;
+   color: white;
+  }
+  .navbar-brand {
+    height: 2.1em;
+    font-size: 1.6em !important;
+
+  }
+
+  .card {
+    background-color: #7FD1B9;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+/* CSS POUR LE MODE SOMBRE */
+
+  .contain.dark{
+    background-color: #112F41;
+    color:white;
+  }
+  
+  .contain.dark .globaldiv{
+    background-color: #112F41;
+    border: 3.5vh solid  #112F41;
+  }
+  
+  .contain.dark .globaldiv div{
+    background-color: #263742;
+  }
+  
+  .contain.dark .container{
+    background-color: #112F41;
+    color:white;
+  }
+
+  .contain.dark .containcard div{
+    background-color:#263742;  
+  }
+  .contain.dark .containcard{
+    border-bottom: 7.2vh solid #112F41;
+    border-top:5vh solid #112F41;
+  }
+
+  .contain.dark .containcard2 div{
+    background-color:#263742;  
+  }
+  .contain.dark .containcard2{
+    border-bottom: 1vh solid #112F41;
+    border-top:1vh solid #112F41;
+  }
+
+  .contain.dark h1, .contain.dark h2, .contain.dark h3{
+    color : white;
+  }
+
+  .butonSom{
+    margin-top: 4px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color:  #376b8b;
+    color: lightgrey;
+  }
+
+  .butonSom:hover{
+    border: 2px solid white;
+  }

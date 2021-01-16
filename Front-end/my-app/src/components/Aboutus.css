@@ -1,0 +1,44 @@
+.membresph{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.membresph img{
+    border-radius: 36px;
+    border: 2px solid black;
+    height: 30vh;
+    width: 22vh;
+}
+
+.membresph > *{
+    width: 30vh;
+}
+
+.introb{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.introb p{
+    font-size: 16px;
+}
+
+.introb h1, .introb h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(24, 24, 24);
+}
+
+.finb{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.finb p{
+    font-size: 18px;
+}
+
