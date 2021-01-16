@@ -6,7 +6,7 @@ const http = require('http');
 const socketio = require('socket.io');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
-
+const users = getUsersInRoom;
 
 const app = express();
 const server = http.createServer(app);
@@ -135,5 +135,15 @@ io.on('connect', (socket) => {
       io.to(user.room).emit('message', { user: '', text: `${user.name} has left.` }); //message envoyé dans la salle lors de la déconnexion
       io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)}); //met à jour les utilisateurs dans la salle
     }
+
+    delete users[socket.id];
+  })
+
+  socket.on("callUser", (data) => {
+    io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
+  })
+
+  socket.on("acceptCall", (data) => {
+    io.to(data.to).emit('callAccepted', data.signal);
   })
 });
