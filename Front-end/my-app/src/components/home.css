@@ -1,0 +1,65 @@
+.maxS{
+	padding-top: 5px;
+	height: 84vh;
+	background-image: url(../images/img_backk.png);
+	background-size: 100%;
+}
+
+.principal{
+	display: flex;
+	justify-content: space-evenly;
+	margin: 20px;
+	
+ }
+
+ .gauche{
+	display: flex;
+	justify-content: center;
+	
+	width: 50%;
+	height: 75vh;
+	background-color: rgb(6, 6, 58);
+	border-radius: 6px;
+	border: 5px solid #7FD1B9;
+	
+ }
+
+ .App-logo{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	animation: App-logo-spin infinite 10s linear;
+	height: 90%;
+ }
+
+ @keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+  }
+
+ .droite {
+	
+	display: flex;
+	flex-direction: column;
+	
+	width: 50%;
+	height: 75vh;
+	justify-content: center;
+	text-align: center;
+ }
+
+
+
+ .blabla h1{
+	font-size: 45px;
+ }
+
+ .blabla p{
+	 font-size: 20px;
+ }
+
+ @media (max-width: 850px) {
+    .gauche {
+      display: none;
+    }
+  }
+ 

@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    
+  }
+ 
+
+  .card-header{
+    margin-bottom: 20px;
+
+
+  }
+.card-header{
+  height: 50%; 
+  margin-bottom: 20px;
+
+}  
+.Title{
+    width: 100%; 
+}
+.Title h2{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+}
+
+.Connect{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+.Connect fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+}
+
+.ButtonCenter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 50%;
+  height: auto;
+  
+}
+
+.Connect legend {
+    text-align: left;
+    font-weight: 800;
+    padding: 2px;
+
+}
+
+.Connect label{
+  float: left;
+  clear: left;
+  width: auto;
+  text-align: right;
+  margin-bottom: 5px;
+  
+}
+
+.Connect input{
+  float: right;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 20px;
+  
+}
+
+.Connect button{
+  float: right;
+  border-radius: 25px;
+  background-color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+.selects{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.Langue{
+  width: 40%;
+  height: 40px;
+  margin: 5px;
+}
