@@ -4,8 +4,8 @@ const path = require('path');
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const socket = require("socket.io");
-const io = socket(server);
+//const socket = require("socket.io");
+//const io = socket(server);
 
 const getUsersInRoom = require('../../Back-end/users');
 
@@ -22,7 +22,7 @@ server.get('/', function (req, res) {
 //
  
 // Video
-const users = getUsersInRoom;
+/*const users = getUsersInRoom;
 
 io.on('connection', socket => {
     if (!users[socket.id]) {
@@ -30,18 +30,7 @@ io.on('connection', socket => {
     }
     socket.emit("yourID", socket.id);
     io.sockets.emit("allUsers", users);
-    socket.on('disconnect', () => {
-        delete users[socket.id];
-    })
-
-    socket.on("callUser", (data) => {
-        io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
-    })
-
-    socket.on("acceptCall", (data) => {
-        io.to(data.to).emit('callAccepted', data.signal);
-    })
-});
+});*/
 // fin Video
 
 server.listen(process.env.PORT || 8080);
