@@ -41,6 +41,7 @@ function Room() {
     socket.current = io.connect("/VideoChat");
 
     const user = authService.getCurrentUser();
+    const room = user.room;
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
       setStream(stream);
