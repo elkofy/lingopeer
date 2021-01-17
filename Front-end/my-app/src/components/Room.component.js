@@ -4,9 +4,7 @@ import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
 import Chat from "./Chat/Chat";
-import authService from '../../services/auth.service';
-import { user } from '../../../../Back-end/app/models';
-import { getUsersInRoom } from '../../../../Back-end/users';
+import authService from '../services/auth.service';
 
 const Container = styled.div`
   height: 100vh;
@@ -43,12 +41,6 @@ function Room() {
     socket.current = io.connect("/VideoChat");
 
     const user = authService.getCurrentUser();
-    const otherUser;
-    getUsersInRoom(user.room).forEach(function(getUsersInRoom){
-      if (getUsersInRoom !== user){
-        otherUser = getUsersInRoom;
-      }
-    });
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
       setStream(stream);
@@ -135,7 +127,7 @@ function Room() {
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h1>{otherUser} is calling you</h1>
+        <h1>{caller} is calling you</h1>
         <button onClick={acceptCall}>Accept</button>
       </div>
     )
@@ -154,7 +146,7 @@ function Room() {
             return null;
           }
           return (
-            <button onClick={() => callPeer(key)}>Call {otherUser}</button>
+            <button onClick={() => callPeer(key)}>Call {key}</button>
           );
         })}
       </Row>
