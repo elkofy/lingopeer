@@ -11,7 +11,6 @@ const users = {};
 
 const app = express();
 const server = http.createServer(app);
-//const io = socketio(server);
 const io = require("socket.io")(server, {
   cors:{
     origin: "https://lingo-peer.netlify.app",
