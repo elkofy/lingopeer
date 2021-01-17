@@ -1,0 +1,140 @@
+.globaldiv{
+    display: flex;
+    flex-direction: row;
+    border : 3vh solid white;
+    justify-content: space-evenly;
+}
+
+.globaldiv div{
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #7FD1B9;
+    border-radius: 15px;
+    width: 30%;
+    height: 77vh;
+    
+    background-color: cornsilk;
+    
+}
+
+.globaldiv h1{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+.globaldiv p{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 19px;
+}
+
+:root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: rgb(106, 163, 137);
+    --colorShadeB: rgb(121, 186, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 211);
+    --colorShadeE: rgb(205, 255, 232);
+  }
+  
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+  
+  
+  .globaldiv button {
+    position: relative;
+    top: 40px;
+    left: 12%;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.5rem;
+      color:var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+  
+  button.big-button {
+    width: 76%;
+    height: 20vh;
+     padding: 1em 2em;
+     border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+  transform-style: preserve-3d;
+     transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  button.big-button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+      box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+   transform: translate3d(0, 0.75em, -1em);
+       transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+  
+  button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+  }
+  
+  button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+  }
+  
+  button.big-button:active {
+              transform: translate(0em, 0.75em);
+  }
+  
+  button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+    
+        box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  
+  }
+
+
+  @media screen and (max-width: 1100px)
+{
+    .globaldiv button {
+        font-size:1rem;
+        top: 15px;
+    }
+}
+@media (max-width: 850px) {
+  .globaldiv {
+    top: 40px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .globaldiv div{
+    display: flex;
+    flex-direction: column;
+
+    border: 4px solid #7FD1B9;
+    border-radius: 15px;
+    width: 300px;
+    height: 77vh;
+    margin-top: 10px;
+    background-color: cornsilk;
+    
+}
+}
+
