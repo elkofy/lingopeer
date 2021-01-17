@@ -108,6 +108,7 @@ io.on('connection', (socket) => {
   }
   socket.emit("yourID", socket.id);
   io.sockets.emit("allUsers", users);
+  socket.emit("test");
   
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
