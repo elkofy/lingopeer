@@ -50,15 +50,16 @@ function Room() {
       }
     })
 
-    socket.on("yourID", (id) => {
+    socket.current.on("yourID", (id) => {
       setYourID(id);
+      console.log(id);
     })
-    socket.on("allUsers", (users) => {
+    socket.current.on("allUsers", (users) => {
       setUsers(users);
       console.log(users);
     })
 
-    socket.on("hey", (data) => {
+    socket.current.on("hey", (data) => {
       setReceivingCall(true);
       setCaller(data.from);
       setCallerSignal(data.signal);

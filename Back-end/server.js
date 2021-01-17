@@ -101,7 +101,7 @@ function initial() {
   });
 }
 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
   //listener de connection
   if (!users[socket.id]) {
     users[socket.id] = socket.id;
