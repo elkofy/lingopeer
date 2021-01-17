@@ -50,6 +50,10 @@ function Room() {
       }
     })
 
+    socket.current.on("test", () => {
+      console.log("le test passe");
+    })
+
     socket.current.on("yourID", (id) => {
       setYourID(id);
       console.log(id);
