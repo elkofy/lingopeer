@@ -103,6 +103,12 @@ function initial() {
 
 io.on('connect', (socket) => {
   //listener de connection
+  if (!users[socket.id]) {
+    users[socket.id] = socket.id;
+  }
+  socket.emit("yourID", socket.id);
+  io.sockets.emit("allUsers", users);
+
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
     const { error, user } = addUser({ id: socket.id, name, room });
@@ -140,10 +146,14 @@ io.on('connect', (socket) => {
   })
 
   socket.on("callUser", (data) => {
+    //listener de demande d'appel
+    const user = getUser(socket.id);
+
     io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
   })
 
   socket.on("acceptCall", (data) => {
+    //listener d'acceptation d'appel
     io.to(data.to).emit('callAccepted', data.signal);
   })
 });
