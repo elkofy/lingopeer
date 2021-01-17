@@ -106,6 +106,7 @@ io.on('connection', (socket) => {
   //listener de connection
   if (!users2[socket.id]) {
     users2[socket.id] = socket.id;
+    console.log("test");
   }
   socket.emit("yourID", socket.id);
   io.sockets.emit("allUsers", users2);
@@ -144,7 +145,7 @@ io.on('connection', (socket) => {
       io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)}); //met à jour les utilisateurs dans la salle
     }
 
-    delete users[socket.id];
+    delete users2[socket.id];
   })
 
   socket.on("callUser", (data) => {

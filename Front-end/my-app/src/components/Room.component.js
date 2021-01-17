@@ -26,7 +26,7 @@ const Video = styled.video`
 
 function Room() {
   const [yourID, setYourID] = useState("");
-  const [users, setUsers] = useState({});
+  const [users2, setUsers] = useState({});
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
   const [caller, setCaller] = useState("");
@@ -58,9 +58,9 @@ function Room() {
       setYourID(id);
       console.log(id);
     })
-    socket.current.on("allUsers", (users) => {
-      setUsers(users);
-      console.log(users);
+    socket.current.on("allUsers", (users2) => {
+      setUsers(users2);
+      console.log(users2);
     })
 
     socket.current.on("hey", (data) => {
@@ -141,7 +141,7 @@ function Room() {
       </Row>
       <Chat/>
       <Row>
-        {Object.keys(users).map(key => {
+        {Object.keys(users2).map(key => {
           if (key === yourID) {
             return null;
           }
@@ -149,7 +149,6 @@ function Room() {
             <button onClick={() => callPeer(key)}>Call {key}</button>
           );
         })}
-        <button onClick={() => callPeer(users.id)}>hola</button>
       </Row>
       <Row>
         {incomingCall}
