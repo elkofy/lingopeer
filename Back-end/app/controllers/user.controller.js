@@ -5,6 +5,9 @@ exports.allAccess = (req, res) => {
 exports.userBoard = (req, res) => {
   res.status(200).send("User Content.");
 };
+exports.userchoice = (req, res) => {
+  res.status(200).send("User Choice.");
+};
 
 exports.adminBoard = (req, res) => {
   res.status(200).send("Admin Content.");
