@@ -25,5 +25,5 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
-  app.get("/api/test/admin",controller.userchoice);
+  app.get("/api/test/choice",controller.userchoice);
 };

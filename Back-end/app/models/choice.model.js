@@ -9,4 +9,4 @@ const Choice = mongoose.model(
   })
 );
 
-module.exports = Role;
+module.exports = Choice;

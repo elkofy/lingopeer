@@ -74,7 +74,7 @@ exports.choice = (req, res) => {
     theme:req.body.langue,
 
   });
-
+res.send({message:"userchoices"});
 }
 exports.signin = (req, res) => {
   User.findOne({
