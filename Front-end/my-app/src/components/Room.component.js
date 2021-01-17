@@ -37,7 +37,7 @@ function Room() {
   const socket = useRef();
 
   useEffect(() => {
-    socket.current = io.connect("/");
+    socket.current = io.connect("/VideoChat");
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
       setStream(stream);
       if (userVideo.current) {
