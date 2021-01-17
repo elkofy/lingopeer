@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a5b98749.chunk.css",
+    "main.js": "/static/js/main.16f4591e.chunk.js",
+    "main.js.map": "/static/js/main.16f4591e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ff166ee5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ff166ee5.js.map",
+    "static/css/2.60c0a443.chunk.css": "/static/css/2.60c0a443.chunk.css",
+    "static/js/2.69f9a36e.chunk.js": "/static/js/2.69f9a36e.chunk.js",
+    "static/js/2.69f9a36e.chunk.js.map": "/static/js/2.69f9a36e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.60c0a443.chunk.css.map": "/static/css/2.60c0a443.chunk.css.map",
+    "static/css/main.a5b98749.chunk.css.map": "/static/css/main.a5b98749.chunk.css.map",
+    "static/js/2.69f9a36e.chunk.js.LICENSE.txt": "/static/js/2.69f9a36e.chunk.js.LICENSE.txt",
+    "static/media/home.css": "/static/media/img_backk.50a79866.png",
+    "static/media/Prof.css": "/static/media/paysageProfile.0e946ce9.jpg",
+    "static/media/photo_Alec.6c3f7171.jpg": "/static/media/photo_Alec.6c3f7171.jpg",
+    "static/media/photo_Bapt.1074ec2f.jpg": "/static/media/photo_Bapt.1074ec2f.jpg",
+    "static/media/photo_Louis.5e273d0b.jfif": "/static/media/photo_Louis.5e273d0b.jfif",
+    "static/media/photo_Nass.126d9af7.png": "/static/media/photo_Nass.126d9af7.png",
+    "static/media/photo_driss.4bb87b27.jpg": "/static/media/photo_driss.4bb87b27.jpg",
+    "static/media/photo_saad.add691d8.png": "/static/media/photo_saad.add691d8.png",
+    "static/media/planet-earth-svgrepo-com.067d5054.svg": "/static/media/planet-earth-svgrepo-com.067d5054.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff166ee5.js",
+    "static/css/2.60c0a443.chunk.css",
+    "static/js/2.69f9a36e.chunk.js",
+    "static/css/main.a5b98749.chunk.css",
+    "static/js/main.16f4591e.chunk.js"
+  ]
+}
