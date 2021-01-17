@@ -144,7 +144,7 @@ function Room() {
             <button onClick={() => callPeer(key)}>Call {key}</button>
           );
         })}
-        return (<button>hola</button>);
+        <button>hola</button>
       </Row>
       <Row>
         {incomingCall}
