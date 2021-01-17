@@ -67,6 +67,15 @@ exports.signup = (req, res) => {
   });
 };
 
+exports.choice = (req, res) => {
+  const choice = new Choice({
+    username: req.body.username,
+    langue: req.body.langue,
+    theme:req.body.langue,
+
+  });
+
+}
 exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username
