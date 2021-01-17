@@ -6,7 +6,7 @@ const http = require('http');
 const socketio = require('socket.io');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
-const users = {};
+const users2 = {};
 
 const app = express();
 const server = http.createServer(app);
@@ -103,11 +103,11 @@ function initial() {
 
 io.on('connection', (socket) => {
   //listener de connection
-  if (!users[socket.id]) {
-    users[socket.id] = socket.id;
+  if (!users2[socket.id]) {
+    users2[socket.id] = socket.id;
   }
   socket.emit("yourID", socket.id);
-  io.sockets.emit("allUsers", users);
+  io.sockets.emit("allUsers", users2);
   socket.emit("test");
   
   socket.on('join', ({ name, room }, callback) => {
