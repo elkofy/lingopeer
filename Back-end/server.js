@@ -101,14 +101,14 @@ function initial() {
   });
 }
 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
   //listener de connection
   if (!users[socket.id]) {
     users[socket.id] = socket.id;
   }
   socket.emit("yourID", socket.id);
-  socket.emit("allUsers", users);
-
+  io.sockets.emit("allUsers", users);
+  
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
     const { error, user } = addUser({ id: socket.id, name, room });

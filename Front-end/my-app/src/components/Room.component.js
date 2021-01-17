@@ -52,6 +52,7 @@ function Room() {
 
     socket.current.on("yourID", (id) => {
       setYourID(id);
+      console.log(id);
     })
     socket.current.on("allUsers", (users) => {
       setUsers(users);
@@ -108,12 +109,6 @@ function Room() {
   }
 
   let UserVideo;
-  if (stream) {
-    UserVideo = (
-      <Video playsInline muted hidden ref={userVideo} autoPlay />
-    );
-  }
-
   let PartnerVideo;
   if (callAccepted) {
     UserVideo = (
@@ -150,6 +145,7 @@ function Room() {
             <button onClick={() => callPeer(key)}>Call {key}</button>
           );
         })}
+        <button onClick={() => callPeer(users.id)}>hola</button>
       </Row>
       <Row>
         {incomingCall}
