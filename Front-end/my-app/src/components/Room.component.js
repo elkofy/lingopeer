@@ -50,15 +50,15 @@ function Room() {
       }
     })
 
-    socket.current.on("yourID", (id) => {
+    socket.on("yourID", (id) => {
       setYourID(id);
     })
-    socket.current.on("allUsers", (users) => {
+    socket.on("allUsers", (users) => {
       setUsers(users);
       console.log(users);
     })
 
-    socket.current.on("hey", (data) => {
+    socket.on("hey", (data) => {
       setReceivingCall(true);
       setCaller(data.from);
       setCallerSignal(data.signal);
@@ -144,7 +144,7 @@ function Room() {
             <button onClick={() => callPeer(key)}>Call {key}</button>
           );
         })}
-        <button>hola</button>
+        <button onClick={() => callPeer(users.id)}>hola</button>
       </Row>
       <Row>
         {incomingCall}
