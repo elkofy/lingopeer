@@ -285,7 +285,10 @@ export default class Register extends Component {
                     <option value="Expert">Expert</option>
                     
                   </select>
-                  
+                  <div className="form-group">
+                    <p>En vous connectant votre email,nom d'utilsateur et vos préférence linguistiques
+                       seront sauvegardé</p>
+                  </div>
                 </div>
 
                 <div className="form-group">
@@ -305,6 +308,7 @@ export default class Register extends Component {
                   role="alert"
                 >
                   {this.state.message}
+                  <p>Cliquez sur login pour vous connecter !</p>
                 </div>
               </div>
             )}

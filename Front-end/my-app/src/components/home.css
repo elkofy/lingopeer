@@ -1,6 +1,6 @@
 .maxS{
 	padding-top: 5px;
-	height: 84vh;
+	height: 85vh;
 	background-image: url(../images/img_backk.png);
 	background-size: 100%;
 }
@@ -57,9 +57,41 @@
 	 font-size: 20px;
  }
 
+ @media (max-width: 625px) { 
+    .droite{
+        padding-top: 70px;
+    }
+ }
+
+ @media (max-height: 525px) {
+    .droite{
+        padding-top: 100px;
+    }
+ }
+
+ @media (max-height: 475px) {
+    .droite{
+        padding-top: 200px;
+    }
+ }
+
+ @media (max-height: 345px) {
+    .droite{
+        padding-top: 250px;
+    }
+ }
+
  @media (max-width: 850px) {
+    .maxS{
+        background-image:none;
+    }
+
     .gauche {
       display: none;
+    }
+
+    .blabla h1{
+        font-size: 40px;
     }
   }
  

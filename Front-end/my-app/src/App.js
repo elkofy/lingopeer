@@ -72,7 +72,7 @@ export default  class App extends Component  {
     return (
       <div>
         
-        <nav className="navbar navbar-expand navbar-custom navbar-dark  navbar-default navbar-custom">
+        <nav className="navbar navbar-expand-sm navbar-custom navbar-dark  navbar-default navbar-custom">
           <Link to={"/"} className="navbar-brand">
             LingoPeer
           </Link>

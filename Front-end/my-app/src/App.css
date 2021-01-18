@@ -94,3 +94,9 @@ label {
   .butonSom:hover{
     border: 2px solid white;
   }
+  
+  @media (max-width : 575px){
+    .navbar-custom {
+      height: 175px;
+    }
+  }
