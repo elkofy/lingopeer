@@ -149,8 +149,6 @@ io.on('connection', (socket) => {
 
   socket.on("callUser", (data) => {
     //listener de demande d'appel
-    const user = getUser(socket.id);
-
     io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
   })
 
