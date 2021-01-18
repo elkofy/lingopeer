@@ -24,6 +24,7 @@ const io2 = require("socket.io")(server, {
     methods: ["GET","POST"],
     allowedHeaders: ["*"],
     credential: true
+  }
 });
 
 var corsOptions = {
