@@ -113,6 +113,12 @@ function Room() {
   }
 
   let UserVideo;
+  if (stream){
+    UserVideo = (
+      <Video playsInline muted hidden ref={userVideo} autoPlay />
+    );
+  }
+
   let PartnerVideo;
   if (callAccepted) {
     UserVideo = (
