@@ -37,6 +37,8 @@ function Room() {
   const partnerVideo = useRef();
   const socket = useRef();
 
+  let myID;
+
   useEffect(() => {
     socket.current = io.connect("https://lingopeerbe.herokuapp.com/");
 
@@ -50,23 +52,19 @@ function Room() {
       }
     })
 
-    socket.current.on('test', () => {
-      console.log("le test passe");
+    socket.current.on('user', (user) => {
+      console.log(user);
     })
 
-    /*socket.current.on('yourID', (id) => {
+    socket.current.on('yourID', (id) => {
       setYourID(id);
-      console.log(id);
-    })*/
+      myID = id;
+      console.log(myID);
+    })
 
     socket.current.on('allUsers', (users2) => {
       setUsers(users2);
       console.log(users2);
-      console.log(users2[0].name);
-    })
-    socket.current.on('yourName', (name) => {
-      setYourID(name);
-      console.log(yourID);
     })
 
     socket.current.on('hey', (data) => {
@@ -139,7 +137,7 @@ function Room() {
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h1>{caller.name} is calling you</h1>
+        <h1>The other user is calling you</h1>
         <button onClick={acceptCall}>Accept</button>
       </div>
     )
@@ -154,11 +152,11 @@ function Room() {
       <Chat/>
       <Row>
         {Object.keys(users2).map(key => {
-          if (key.name === yourID) {
+          if (key === myID) {
             return null;
           }
           return (
-            <button onClick={() => callPeer(key.name)}>Call {key.name}</button>
+            <button onClick={() => callPeer(key)}>Call the other user</button>
           );
         })}
       </Row>
