@@ -38,7 +38,7 @@ function Room() {
   const socket = useRef();
 
   useEffect(() => {
-    socket.current = io.connect("/VideoChat");
+    socket.current = io.connect("https://lingopeerbe.herokuapp.com/");
 
     const user = authService.getCurrentUser();
     const room = user.room;
