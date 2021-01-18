@@ -110,13 +110,13 @@ function initial() {
 
 io.on('connect', (socket) => {
   //listener de connection
-  if (!users2[socket.id]) {
+  /*if (!users2[socket.id]) {
     users2[socket.id] = socket.id;
     console.log('test');
   }
   socket.emit('yourID', socket.id);
-  io2.sockets.emit('allUsers', users2);
-  socket.emit('test');
+  io2.sockets.emit('allUsers', getUsersInRoom(getUser.room));
+  socket.emit('test');*/
   
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
@@ -125,6 +125,10 @@ io.on('connect', (socket) => {
     if(error) return callback(error);
 
     socket.join(user.room); //l'utilisateur user rejoins la room room
+    io.sockets.emit('allUsers', getUsersInRoom(room));
+    socket.emit('yourName', user.name.trim().toLowerCase());
+    console.log(name);
+
 
     socket.emit('message', { user: '', text: `${user.name}, welcome to the ${user.room} room!`});    //message envoyé à l'utilisateur lors de sa connexion
     socket.broadcast.to(user.room).emit('message', { user: '', text: `${user.name} has joined!` });  //message envoyé à tous les utilisateurs sauf celui qui rejoins

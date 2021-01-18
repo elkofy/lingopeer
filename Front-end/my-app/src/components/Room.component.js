@@ -54,13 +54,19 @@ function Room() {
       console.log("le test passe");
     })
 
-    socket.current.on('yourID', (id) => {
+    /*socket.current.on('yourID', (id) => {
       setYourID(id);
       console.log(id);
-    })
+    })*/
+
     socket.current.on('allUsers', (users2) => {
       setUsers(users2);
       console.log(users2);
+      console.log(users2[0].name);
+    })
+    socket.current.on('yourName', (name) => {
+      setYourID(name);
+      console.log(yourID);
     })
 
     socket.current.on('hey', (data) => {
@@ -133,7 +139,7 @@ function Room() {
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h1>{caller} is calling you</h1>
+        <h1>{caller.name} is calling you</h1>
         <button onClick={acceptCall}>Accept</button>
       </div>
     )
@@ -148,11 +154,11 @@ function Room() {
       <Chat/>
       <Row>
         {Object.keys(users2).map(key => {
-          if (key === yourID) {
+          if (key.name === yourID) {
             return null;
           }
           return (
-            <button onClick={() => callPeer(key)}>Call {key}</button>
+            <button onClick={() => callPeer(key.name)}>Call {key.name}</button>
           );
         })}
       </Row>
