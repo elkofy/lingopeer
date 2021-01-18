@@ -18,7 +18,13 @@ const io = require("socket.io")(server, {
   }
 });
 
-const io2 = require("socket.io")(server);
+const io2 = require("socket.io")(server, {
+  cors:{
+    origin: "https://lingo-peer.netlify.app",
+    methods: ["GET","POST"],
+    allowedHeaders: ["*"],
+    credential: true
+});
 
 var corsOptions = {
   origin: "https://lingo-peer.netlify.app",
@@ -164,4 +170,4 @@ io2.on('connection', socket => {
     //listener d'acceptation d'appel
     io2.to(data.to).emit('callAccepted', data.signal);
   })
-})
+});
