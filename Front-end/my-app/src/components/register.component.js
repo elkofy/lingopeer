@@ -285,7 +285,10 @@ export default class Register extends Component {
                     <option value="Expert">Expert</option>
                     
                   </select>
-                  
+                  <div className="form-group">
+                    <p>En vous connectant votre email,nom d'utilsateur et vos préférence linguistiques
+                       seront sauvegardé</p>
+                  </div>
                 </div>
 
                 <div className="form-group">
