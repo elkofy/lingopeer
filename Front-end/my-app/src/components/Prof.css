@@ -12,3 +12,21 @@
     background-color: rgba(127, 209, 185, 0.3);
     margin-top: 20px;
 }
+
+@media (max-width : 575px){
+
+    .fullPage .container{
+        width : 80%;
+    }
+  }
+
+  @media (max-width : 1200px){
+    .fullPage {
+        background-image: none;
+    }
+
+    .fullPage .container{
+        background-color: rgb(230, 230, 230);
+        width : 60%;
+    }
+  }

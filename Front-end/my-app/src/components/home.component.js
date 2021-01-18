@@ -44,8 +44,9 @@ export default class Home extends Component {
         <div class="droite" >
           <div class="blabla">
             <h1>Avec LingoPeer devenez le meilleur en langues</h1>
-            <p>Totalement gratuit et facile d'utilisation, conversez avec des gens du monde entier, 
-            démarrez maintenant.
+            <p>Démarrez maintenant en vous créant un compte en cliquant sur "Sign up", ou sur "Login" si vous avez
+              un compte.
+            
             </p>
           </div>
         </div> 

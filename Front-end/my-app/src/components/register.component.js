@@ -305,6 +305,7 @@ export default class Register extends Component {
                   role="alert"
                 >
                   {this.state.message}
+                  <p>Cliquez sur login pour vous connecter !</p>
                 </div>
               </div>
             )}
