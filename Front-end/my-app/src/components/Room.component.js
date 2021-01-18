@@ -37,14 +37,8 @@ function Room() {
   const partnerVideo = useRef();
   const socket = useRef();
 
-  let myID;
-
   useEffect(() => {
     socket.current = io.connect("https://lingopeerbe.herokuapp.com/");
-
-    const user = authService.getCurrentUser();
-    const room = user.room;
-
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
       setStream(stream);
       if (userVideo.current) {
@@ -52,8 +46,9 @@ function Room() {
       }
     })
 
-    socket.current.on('user', (user) => {
-      console.log(user);
+    socket.current.on('yourID', (id) => {
+      setYourID(id);
+      console.log(yourID);
     })
 
     socket.current.on('allUsers', (users2) => {
@@ -146,7 +141,7 @@ function Room() {
       <Chat/>
       <Row>
         {Object.keys(users2).map(key => {
-          if (key === myID) {
+          if (key === yourID) {
             return null;
           }
           return (
