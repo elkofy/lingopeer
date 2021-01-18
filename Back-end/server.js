@@ -18,6 +18,8 @@ const io = require("socket.io")(server, {
   }
 });
 
+const io2 = require("socket.io")(server);
+
 var corsOptions = {
   origin: "https://lingo-peer.netlify.app",
 };
@@ -99,15 +101,8 @@ function initial() {
   });
 }
 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
   //listener de connection
-  if (!users2[socket.id]) {
-    users2[socket.id] = socket.id;
-    console.log('test');
-  }
-  socket.emit('yourID', socket.id);
-  io.sockets.emit('allUsers', users2);
-  socket.emit('test');
   
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
@@ -142,16 +137,31 @@ io.on('connection', (socket) => {
       io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)}); //met à jour les utilisateurs dans la salle
     }
 
+  })
+
+
+});
+
+io2.on('connection', socket => {
+  if (!users2[socket.id]) {
+    users2[socket.id] = socket.id;
+    console.log('test');
+  }
+  socket.emit('yourID', socket.id);
+  io2.sockets.emit('allUsers', users2);
+  socket.emit('test');
+
+  socket.on('disconnect', () => {
     delete users2[socket.id];
   })
 
   socket.on("callUser", (data) => {
     //listener de demande d'appel
-    io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
+    io2.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
   })
 
   socket.on("acceptCall", (data) => {
     //listener d'acceptation d'appel
-    io.to(data.to).emit('callAccepted', data.signal);
+    io2.to(data.to).emit('callAccepted', data.signal);
   })
-});
+})
