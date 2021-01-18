@@ -50,20 +50,20 @@ function Room() {
       }
     })
 
-    socket.current.on("test", () => {
+    socket.current.on('test', () => {
       console.log("le test passe");
     })
 
-    socket.current.on("yourID", (id) => {
+    socket.current.on('yourID', (id) => {
       setYourID(id);
       console.log(id);
     })
-    socket.current.on("allUsers", (users2) => {
+    socket.current.on('allUsers', (users2) => {
       setUsers(users2);
       console.log(users2);
     })
 
-    socket.current.on("hey", (data) => {
+    socket.current.on('hey', (data) => {
       setReceivingCall(true);
       setCaller(data.from);
       setCallerSignal(data.signal);

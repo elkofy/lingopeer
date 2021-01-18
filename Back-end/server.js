@@ -3,11 +3,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require('http');
-const socketio = require('socket.io');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 const users2 = {};
-const users = {};
 
 const app = express();
 const server = http.createServer(app);
@@ -105,11 +103,11 @@ io.on('connection', (socket) => {
   //listener de connection
   if (!users2[socket.id]) {
     users2[socket.id] = socket.id;
-    console.log("test");
+    console.log('test');
   }
-  socket.emit("yourID", socket.id);
-  io.sockets.emit("allUsers", users2);
-  socket.emit("test");
+  socket.emit('yourID', socket.id);
+  io.sockets.emit('allUsers', users2);
+  socket.emit('test');
   
   socket.on('join', ({ name, room }, callback) => {
     //listener pour rejoindre une salle, ajoute l'utilisateur à une room grace à son nom
