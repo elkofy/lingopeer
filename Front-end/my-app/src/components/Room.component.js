@@ -56,12 +56,6 @@ function Room() {
       console.log(user);
     })
 
-    socket.current.on('yourID', (id) => {
-      setYourID(id);
-      myID = id;
-      console.log(myID);
-    })
-
     socket.current.on('allUsers', (users2) => {
       setUsers(users2);
       console.log(users2);
