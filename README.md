@@ -1,28 +1,15 @@
-# Projet M3301 (dépôt de rendu)
+# Lingo Peer
 
-Ce dépôt est le dépôt de référence de votre équipe pour le module M3301.
-Vos rendus se feront en déposant tous les fichiers pertinents pour chaque itération ici.
-
-Ce dépôt est initialement organisé comme suit :
-```console
-rendus
-├── docs/
-│   └── README.md
-├── .gitattributes
-├── .gitignore
-├── .gitlab
-│   └── …
-└── README.md
-```
-
-**Vous déposerez vos rendus textuel au format `pdf` dans le dossier `docs/`.<br>
-Tout document textuel dans un autre format ne sera pas considéré.**
+Voici l'application Lingo-Peer ,c'est une web application qui permet de se connecter et discuter avec des gens sur le monde entier !
 
 
-##### Fichiers particuliers
+Ceci à été fait dans le cadre du module de production d'application de ma formation à l'IUT.
 
-Les deux fichiers `.gitattributes` et `.gitignore` sont liés à la configuration de git.<br>
-Vous pouvez modifier le fichier `.gitignore` en fonction des technologies utilisées et de l'organisation du dépôt choisie.<br>
-Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
-Le dossier `.gitlab` contient la configuration spécifique à GitLab.
+La partie Front-end/Client est Reactjs est deployée sur Netlify.
+
+La partie Back-end/Serveur utilise Node.js et est déployé via Heroku.
+
+La base de données est hébergé sur MongoDB.
+
+https://lingo-peer.netlify.app/
